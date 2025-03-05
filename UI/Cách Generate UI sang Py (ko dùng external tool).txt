@@ -1,9 +1,10 @@
 
+Chạy 3 dòng này trong terminal:
 
 Pip install Pyqt5
 
 python -m PyQt5.uic.pyuic -x UI/LoginWindow.ui -o UI/LoginWindow.py
 
-python -m PyQt5.pyrcc_main -o UI/LoginWindow_rc.py UI/LoginWindow.qrc
+python -m PyQt5.pyrcc_main -o UI/LoginWindow_rc.py UI/Background.qrc
 
 Tương tự thay đổi "LoginWindow" cho các file tương ứng 
