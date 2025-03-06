@@ -7,4 +7,14 @@ python -m PyQt5.uic.pyuic -x UI/LoginWindow.ui -o UI/LoginWindow.py
 
 python -m PyQt5.pyrcc_main -o UI/LoginWindow_rc.py UI/Background.qrc
 
-Tương tự thay đổi "LoginWindow" cho các file tương ứng 
+Tương tự thay đổi "LoginWindow" cho các file tương ứng
+
+
+** NewsWindow
+
+ python -m PyQt5.uic.pyuic -x UI/NewsWindow.ui -o UI/NewsWindow.py
+ python -m PyQt5.pyrcc_main -o UI/NewsWindow_rc.py UI/Background.qrc
+
+ ** MainWindow
+ python -m PyQt5.uic.pyuic -x UI/MainWindow.ui -o UI/MainWindow.py
+ python -m PyQt5.pyrcc_main -o UI/MainWindow_rc.py UI/Background.qrc

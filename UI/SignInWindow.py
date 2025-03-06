@@ -102,6 +102,7 @@ class Ui_Form(object):
         self.label_5.setText(_translate("Form", "or "))
         self.pushButtonLogin.setText(_translate("Form", "Login"))
         self.label_6.setText(_translate("Form", "Password"))
+
 import LoginWindow_rc
 
 
