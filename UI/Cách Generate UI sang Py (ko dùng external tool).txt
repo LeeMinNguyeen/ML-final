@@ -11,7 +11,7 @@ Rồi lúc chạy file đôi .py thì kiểm tra coi có dòng code " import Log
 
 Tương tự thay đổi "LoginWindow" cho các file tương ứng
 
-
+Coi youtube doan cuoi nay: https://www.youtube.com/watch?v=t3K5-qzT-E4&t=166s
 ** NewsWindow
 
  python -m PyQt5.uic.pyuic -x NewsWindow.ui -o NewsWindow.py
