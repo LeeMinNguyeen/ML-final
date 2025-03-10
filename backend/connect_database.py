@@ -8,7 +8,6 @@ class connector():
         # Create a new client and connect to the server
         self.client = MongoClient(uri, server_api=ServerApi('1'))
         self.db = self.client["ForexTrading"]
-        self.collection = self.db["Users"]
         
     def connects(self):
         # Send a ping to confirm a successful connection
@@ -19,8 +18,9 @@ class connector():
             print(e)
             
     def login(self, username, password):
+        collection = self.db["Users"]
         try:
-            result = self.collection.find_one({"user":username, "password":password})
+            result = collection.find_one({"user":username, "password":password})
             return result
         except Exception as e:
             print(e)

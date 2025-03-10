@@ -31,13 +31,23 @@ class LoginUI(Ui_Form):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
-        self.pushButtonSignIn.clicked.connect(self.checkLogin)
+        self.pushButtonLogin.clicked.connect(self.checkLogin)
         
     def showWindow(self):
         self.MainWindow.show()
         
     def checkLogin(self):
         print("Check Login")
+        
+        username = self.label_6.text()
+        password = self.label_7.text()
+        
+        result = connector.login(username, password)
+        if result:
+            print("Login Successful")
+        else:
+            print("Login Failed")
+        
         self.openSignInWindow()
 
     def openSignInWindow(self):
