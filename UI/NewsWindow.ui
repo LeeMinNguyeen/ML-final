@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1305</width>
-    <height>925</height>
+    <width>1279</width>
+    <height>852</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Forex Dash</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -24,7 +24,26 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-image: url(:/Background/Background.png);</string>
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../Images/Background.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_headlines">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>490</y>
+      <width>1171</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_account_summary">
@@ -41,35 +60,6 @@
     </property>
     <property name="text">
      <string>Account Summary </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_headlines">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>460</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Headlines </string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_headlines">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>520</y>
-      <width>1171</width>
-      <height>331</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -220,13 +210,29 @@
      </item>
     </layout>
    </widget>
+   <widget class="QLabel" name="label_headlines">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>460</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Headlines </string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1305</width>
+     <width>1279</width>
      <height>20</height>
     </rect>
    </property>
@@ -245,9 +251,6 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="news.qrc"/>
-  <include location="Background.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
