@@ -17,7 +17,7 @@ class Ui_Form(object):
         self.Background = QtWidgets.QLabel(parent=Form)
         self.Background.setGeometry(QtCore.QRect(0, 0, 1279, 852))
         self.Background.setText("")
-        self.Background.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/LoginBg.png"))
+        self.Background.setPixmap(QtGui.QPixmap("./Images/LoginBg.png"))
         self.Background.setObjectName("Background")
         self.label_6 = QtWidgets.QLabel(parent=Form)
         self.label_6.setGeometry(QtCore.QRect(710, 340, 371, 16))
@@ -77,6 +77,7 @@ class Ui_Form(object):
         self.pushButtonLogin.setText(_translate("Form", "Login"))
         self.label_8.setText(_translate("Form", "or "))
         self.pushButtonSignIn.setText(_translate("Form", "Sign up"))
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

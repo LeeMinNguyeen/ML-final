@@ -19,7 +19,7 @@ class Ui_NewsWindow(object):
         self.label.setGeometry(QtCore.QRect(0, 0, 1279, 852))
         self.label.setStyleSheet("")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/Background.png"))
+        self.label.setPixmap(QtGui.QPixmap("./Images/Background.png"))
         self.label.setObjectName("label")
         self.lineEdit_headlines = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEdit_headlines.setGeometry(QtCore.QRect(60, 490, 1171, 301))
