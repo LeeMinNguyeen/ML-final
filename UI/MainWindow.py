@@ -122,3 +122,4 @@ class Ui_MainWindow(object):
         self.label_technicals.setText(_translate("MainWindow", "Technicals"))
         self.menuDashBoard.setTitle(_translate("MainWindow", "DashBoard"))
         self.menuHome.setTitle(_translate("MainWindow", "Home"))
+
