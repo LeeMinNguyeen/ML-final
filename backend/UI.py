@@ -3,16 +3,16 @@ import sys, os
 sys.path.append(os.path.abspath('./UI'))
 
 from PyQt6 import QtWidgets
-from LoginWindow import Ui_Form
+from LoginWindow import Ui_LoginWindow
 from SignInWindow import Ui_SignInWindow
 from connect_database import connector
 from MainWindow import Ui_MainWindow
 
-class MongoDatabase:
-    def init(self):
-        self.connector = connector()
-        self.connector.connects()
-    
+class MongoDatabase(connector):
+    def __init__(self):
+        super().__init__()
+        self.connects()
+        
     def disconnect(self):
         self.connector.client.close()
 
@@ -24,19 +24,49 @@ class MainScreen(Ui_MainWindow):
     def showWindow(self):
         self.MainWindow.show()
 
-class SignInUI(Ui_SignInWindow):
+class SignUpUI(Ui_SignInWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.pushButtonCreateNewAccount.clicked.connect(self.CreateNewAccount)
         self.pushButtonLoginSignIn.clicked.connect(self.openLoginWindow)
+        self.db = MongoDatabase()
         
     def showWindow(self):
         self.MainWindow.show()
         
     def CreateNewAccount(self):
         print("Create New Account")
-        self.openLoginWindow()
+        email = self.lineEditEmailAddress.text()
+        username = self.lineEditUserNameSignIn.text()
+        password = self.lineEditPassWordSignin.text()
+        
+        # Check for existing user or email
+        collection = self.db.db["Users"]
+        check1 = collection.find_one({"username": username})
+        check2 = collection.find_one({"email": email})
+        if check1:
+            print("User already exists")
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.showMessage('User already exists')
+            error_dialog.exec()
+            return
+        elif check2:
+            print("Email already exists")
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.showMessage('Email already exists')
+            error_dialog.exec()
+            return
+        
+        result = self.db.NewUser(username = username, email = email, password = password)
+        if result:
+            print("New User Created")
+            self.openLoginWindow()
+        else:
+            print("Failed to create new user")
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.showMessage('Failed to create new user')
+            error_dialog.exec()
         
     def openLoginWindow(self):
         self.MainWindow.hide()
@@ -45,35 +75,37 @@ class SignInUI(Ui_SignInWindow):
         self.loginWindow.setupUi(AltWindow)
         self.loginWindow.showWindow()
         
-class LoginUI(Ui_Form):
+class LoginUI(Ui_LoginWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.pushButtonLogin.clicked.connect(self.checkLogin)
         self.pushButtonSignIn.clicked.connect(self.openSignInWindow)
+        self.db = MongoDatabase()
         
     def showWindow(self):
         self.MainWindow.show()
         
     def checkLogin(self):
-        print("Check Login")
+        username = self.lineEditUserNameLogin.text()
+        password = self.lineEditPassWordLogin.text()
         
-        '''
-        username = self.label_6.text()
-        password = self.label_7.text()
+        print(username, password)
         
-        result = connector.login(username, password)
+        result = self.db.login(username = username, password = password)
         if result:
             print("Login Successful")
+            self.openMainWindow()
         else:
             print("Login Failed")
-        '''
-        self.openMainWindow()
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.showMessage('Login Failed: Invalid username or password')
+            error_dialog.exec()
         
     def openSignInWindow(self):
         self.MainWindow.hide()
         AltWindow = QtWidgets.QMainWindow()
-        self.signInWindow = SignInUI()
+        self.signInWindow = SignUpUI()
         self.signInWindow.setupUi(AltWindow)
         self.signInWindow.showWindow()
 
@@ -84,7 +116,6 @@ class LoginUI(Ui_Form):
         self.mainWindow.setupUi(AltWindow)
         self.mainWindow.showWindow()
         
-    
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     

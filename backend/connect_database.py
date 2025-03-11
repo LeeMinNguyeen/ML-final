@@ -20,7 +20,16 @@ class connector():
     def login(self, username, password):
         collection = self.db["Users"]
         try:
-            result = collection.find_one({"user":username, "password":password})
+            result = collection.find_one({"username": username, "password": password}, {"_id": 0, "username": 1, "email": 1, "password": 1})
+            return result
+        except Exception as e:
+            print(e)
+            return None
+    
+    def NewUser(self, username, email, password):
+        collection = self.db["Users"]
+        try:
+            result = collection.insert_one({"username": username, "email": email, "password": password})
             return result
         except Exception as e:
             print(e)

@@ -17,7 +17,7 @@ class Ui_SignInWindow(object):
         self.label = QtWidgets.QLabel(parent=SignInWindow)
         self.label.setGeometry(QtCore.QRect(0, 0, 1279, 752))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/SignInBg.png"))
+        self.label.setPixmap(QtGui.QPixmap("./Images/SignInBg.png"))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(parent=SignInWindow)
         self.label_2.setGeometry(QtCore.QRect(760, 260, 361, 16))
