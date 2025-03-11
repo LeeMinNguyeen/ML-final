@@ -4,7 +4,7 @@ sys.path.append(os.path.abspath('./UI'))
 
 from PyQt6 import QtWidgets
 from LoginWindow import Ui_LoginWindow
-from SignInWindow import Ui_SignInWindow
+from SignUpWindow import Ui_SignUpWindow
 from connect_database import connector
 from MainWindow import Ui_MainWindow
 
@@ -24,7 +24,7 @@ class MainScreen(Ui_MainWindow):
     def showWindow(self):
         self.MainWindow.show()
 
-class SignUpUI(Ui_SignInWindow):
+class SignUpUI(Ui_SignUpWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
