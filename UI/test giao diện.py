@@ -1,7 +1,8 @@
 from UI.LoginWindow import Ui_LoginWindow
+import sys
 
 if __name__ == "__main__":
-    import sys, QtWidgets
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_LoginWindow()
