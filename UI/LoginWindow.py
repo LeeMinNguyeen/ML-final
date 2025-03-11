@@ -7,19 +7,20 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(1279, 852)
-        Form.setStyleSheet("")
-        self.Background = QtWidgets.QLabel(parent=Form)
+class Ui_LoginWindow(object):
+    def setupUi(self, LoginWindow):
+        LoginWindow.setObjectName("LoginWindow")
+        LoginWindow.resize(1279, 852)
+        LoginWindow.setStyleSheet("")
+        self.Background = QtWidgets.QLabel(parent=LoginWindow)
         self.Background.setGeometry(QtCore.QRect(0, 0, 1279, 852))
         self.Background.setText("")
-        self.Background.setPixmap(QtGui.QPixmap("./Images/LoginBg.png"))
+        self.Background.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/LoginBg.png"))
         self.Background.setObjectName("Background")
-        self.label_6 = QtWidgets.QLabel(parent=Form)
+        self.label_6 = QtWidgets.QLabel(parent=LoginWindow)
         self.label_6.setGeometry(QtCore.QRect(710, 340, 371, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -27,7 +28,7 @@ class Ui_Form(object):
         font.setWeight(50)
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(parent=Form)
+        self.label_7 = QtWidgets.QLabel(parent=LoginWindow)
         self.label_7.setGeometry(QtCore.QRect(710, 430, 371, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -35,7 +36,7 @@ class Ui_Form(object):
         font.setWeight(50)
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
-        self.pushButtonLogin = QtWidgets.QPushButton(parent=Form)
+        self.pushButtonLogin = QtWidgets.QPushButton(parent=LoginWindow)
         self.pushButtonLogin.setGeometry(QtCore.QRect(710, 520, 371, 51))
         font = QtGui.QFont()
         font.setFamily("Adobe Caslon Pro Bold")
@@ -44,7 +45,7 @@ class Ui_Form(object):
         font.setWeight(75)
         self.pushButtonLogin.setFont(font)
         self.pushButtonLogin.setObjectName("pushButtonLogin")
-        self.label_8 = QtWidgets.QLabel(parent=Form)
+        self.label_8 = QtWidgets.QLabel(parent=LoginWindow)
         self.label_8.setGeometry(QtCore.QRect(710, 600, 16, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -52,37 +53,30 @@ class Ui_Form(object):
         font.setWeight(50)
         self.label_8.setFont(font)
         self.label_8.setObjectName("label_8")
-        self.pushButtonSignIn = QtWidgets.QPushButton(parent=Form)
+        self.pushButtonSignIn = QtWidgets.QPushButton(parent=LoginWindow)
         self.pushButtonSignIn.setGeometry(QtCore.QRect(730, 600, 62, 19))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.pushButtonSignIn.setFont(font)
         self.pushButtonSignIn.setObjectName("pushButtonSignIn")
-        self.lineEditPassWordLogin = QtWidgets.QLineEdit(parent=Form)
+        self.lineEditPassWordLogin = QtWidgets.QLineEdit(parent=LoginWindow)
         self.lineEditPassWordLogin.setGeometry(QtCore.QRect(710, 450, 371, 51))
         self.lineEditPassWordLogin.setObjectName("lineEditPassWordLogin")
-        self.lineEditUserNameLogin = QtWidgets.QLineEdit(parent=Form)
+        self.lineEditUserNameLogin = QtWidgets.QLineEdit(parent=LoginWindow)
         self.lineEditUserNameLogin.setGeometry(QtCore.QRect(710, 361, 371, 51))
         self.lineEditUserNameLogin.setObjectName("lineEditUserNameLogin")
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(LoginWindow)
+        QtCore.QMetaObject.connectSlotsByName(LoginWindow)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, LoginWindow):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_6.setText(_translate("Form", "User Name"))
-        self.label_7.setText(_translate("Form", "Password"))
-        self.pushButtonLogin.setText(_translate("Form", "Login"))
-        self.label_8.setText(_translate("Form", "or "))
-        self.pushButtonSignIn.setText(_translate("Form", "Sign up"))
+        LoginWindow.setWindowTitle(_translate("LoginWindow", "Form"))
+        self.label_6.setText(_translate("LoginWindow", "User Name"))
+        self.label_7.setText(_translate("LoginWindow", "Password"))
+        self.pushButtonLogin.setText(_translate("LoginWindow", "Login"))
+        self.label_8.setText(_translate("LoginWindow", "or "))
+        self.pushButtonSignIn.setText(_translate("LoginWindow", "Sign up"))
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_Form()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec())
+

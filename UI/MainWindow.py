@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1279, 852))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("./Images/Background.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/Background.png"))
         self.label.setObjectName("label")
         self.layoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(20, 70, 630, 39))
@@ -122,4 +122,3 @@ class Ui_MainWindow(object):
         self.label_technicals.setText(_translate("MainWindow", "Technicals"))
         self.menuDashBoard.setTitle(_translate("MainWindow", "DashBoard"))
         self.menuHome.setTitle(_translate("MainWindow", "Home"))
-
