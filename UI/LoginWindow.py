@@ -7,13 +7,15 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6 import QtWidgets
 
 
 class Ui_LoginWindow(object):
     def setupUi(self, LoginWindow):
         LoginWindow.setObjectName("LoginWindow")
         LoginWindow.resize(1279, 852)
+        font = QtGui.QFont()
+        font.setFamily("Montserrat Medium")
+        LoginWindow.setFont(font)
         LoginWindow.setStyleSheet("")
         self.Background = QtWidgets.QLabel(parent=LoginWindow)
         self.Background.setGeometry(QtCore.QRect(0, 0, 1279, 852))
@@ -23,6 +25,7 @@ class Ui_LoginWindow(object):
         self.label_6 = QtWidgets.QLabel(parent=LoginWindow)
         self.label_6.setGeometry(QtCore.QRect(710, 340, 371, 16))
         font = QtGui.QFont()
+        font.setFamily("Montserrat Medium")
         font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
@@ -31,6 +34,7 @@ class Ui_LoginWindow(object):
         self.label_7 = QtWidgets.QLabel(parent=LoginWindow)
         self.label_7.setGeometry(QtCore.QRect(710, 430, 371, 16))
         font = QtGui.QFont()
+        font.setFamily("Montserrat Medium")
         font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
@@ -62,10 +66,23 @@ class Ui_LoginWindow(object):
         self.pushButtonSignIn.setObjectName("pushButtonSignIn")
         self.lineEditPassWordLogin = QtWidgets.QLineEdit(parent=LoginWindow)
         self.lineEditPassWordLogin.setGeometry(QtCore.QRect(710, 450, 371, 51))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lineEditPassWordLogin.setFont(font)
         self.lineEditPassWordLogin.setObjectName("lineEditPassWordLogin")
         self.lineEditUserNameLogin = QtWidgets.QLineEdit(parent=LoginWindow)
         self.lineEditUserNameLogin.setGeometry(QtCore.QRect(710, 361, 371, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lineEditUserNameLogin.setFont(font)
         self.lineEditUserNameLogin.setObjectName("lineEditUserNameLogin")
+        self.label = QtWidgets.QLabel(parent=LoginWindow)
+        self.label.setGeometry(QtCore.QRect(830, 160, 441, 151))
+        font = QtGui.QFont()
+        font.setFamily("Adobe Caslon Pro")
+        font.setPointSize(36)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
 
         self.retranslateUi(LoginWindow)
         QtCore.QMetaObject.connectSlotsByName(LoginWindow)
@@ -78,5 +95,6 @@ class Ui_LoginWindow(object):
         self.pushButtonLogin.setText(_translate("LoginWindow", "Login"))
         self.label_8.setText(_translate("LoginWindow", "or "))
         self.pushButtonSignIn.setText(_translate("LoginWindow", "Sign up"))
-
-
+        self.label.setText(_translate("LoginWindow", "Forex trading &\n"
+"back testing system\n"
+""))
