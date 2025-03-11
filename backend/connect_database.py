@@ -1,7 +1,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
-uri = "mongodb+srv://nguyenlm22416c:KoXrZzWniEiTc0Iy@cluster0.6immj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "mongodb+srv://nguyenlm22416c:YcxgUk4K2Il3lNdB@cluster0.6immj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     
 class connector():
     def __init__(self):

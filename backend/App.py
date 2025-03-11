@@ -3,14 +3,12 @@ import sys, os
 sys.path.append(os.path.abspath('./UI'))
 
 from PyQt6 import QtWidgets
-from LoginUI import LoginUI, SignInUI
-from connect_database import connector
+from backend.UI import LoginUI, SignInUI, MainScreen, MongoDatabase
 
 app = QtWidgets.QApplication(sys.argv)
 
 MainWindow = QtWidgets.QMainWindow()
-db = connector()
-db.connects()
+db = MongoDatabase()
 
 display = LoginUI()
 display.setupUi(MainWindow)
