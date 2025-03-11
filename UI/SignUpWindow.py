@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Uni\Nam3\Ki2\MLBA\Final\ML-final\UI\SignInWindow.ui'
+# Form implementation generated from reading ui file 'D:\Uni\Nam3\Ki2\MLBA\Final\ML-final\UI\SignUpWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -9,17 +9,17 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_SignInWindow(object):
-    def setupUi(self, SignInWindow):
-        SignInWindow.setObjectName("SignInWindow")
-        SignInWindow.resize(1279, 852)
-        SignInWindow.setStyleSheet("")
-        self.label = QtWidgets.QLabel(parent=SignInWindow)
+class Ui_SignUpWindow(object):
+    def setupUi(self, SignUpWindow):
+        SignUpWindow.setObjectName("SignUpWindow")
+        SignUpWindow.resize(1279, 852)
+        SignUpWindow.setStyleSheet("")
+        self.label = QtWidgets.QLabel(parent=SignUpWindow)
         self.label.setGeometry(QtCore.QRect(0, 0, 1279, 752))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("./Images/SignInBg.png"))
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(parent=SignInWindow)
+        self.label_2 = QtWidgets.QLabel(parent=SignUpWindow)
         self.label_2.setGeometry(QtCore.QRect(760, 260, 361, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -27,10 +27,10 @@ class Ui_SignInWindow(object):
         font.setWeight(50)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
-        self.lineEditEmailAddress = QtWidgets.QLineEdit(parent=SignInWindow)
+        self.lineEditEmailAddress = QtWidgets.QLineEdit(parent=SignUpWindow)
         self.lineEditEmailAddress.setGeometry(QtCore.QRect(760, 370, 361, 51))
         self.lineEditEmailAddress.setObjectName("lineEditEmailAddress")
-        self.label_5 = QtWidgets.QLabel(parent=SignInWindow)
+        self.label_5 = QtWidgets.QLabel(parent=SignUpWindow)
         self.label_5.setGeometry(QtCore.QRect(760, 610, 121, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -38,7 +38,7 @@ class Ui_SignInWindow(object):
         font.setWeight(50)
         self.label_5.setFont(font)
         self.label_5.setObjectName("label_5")
-        self.pushButtonCreateNewAccount = QtWidgets.QPushButton(parent=SignInWindow)
+        self.pushButtonCreateNewAccount = QtWidgets.QPushButton(parent=SignUpWindow)
         self.pushButtonCreateNewAccount.setGeometry(QtCore.QRect(760, 530, 361, 61))
         font = QtGui.QFont()
         font.setFamily("Adobe Caslon Pro Bold")
@@ -47,10 +47,10 @@ class Ui_SignInWindow(object):
         font.setWeight(75)
         self.pushButtonCreateNewAccount.setFont(font)
         self.pushButtonCreateNewAccount.setObjectName("pushButtonCreateNewAccount")
-        self.lineEditUserNameSignIn = QtWidgets.QLineEdit(parent=SignInWindow)
-        self.lineEditUserNameSignIn.setGeometry(QtCore.QRect(760, 280, 361, 51))
-        self.lineEditUserNameSignIn.setObjectName("lineEditUserNameSignIn")
-        self.label_4 = QtWidgets.QLabel(parent=SignInWindow)
+        self.lineEditUserNameSignUp = QtWidgets.QLineEdit(parent=SignUpWindow)
+        self.lineEditUserNameSignUp.setGeometry(QtCore.QRect(760, 280, 361, 51))
+        self.lineEditUserNameSignUp.setObjectName("lineEditUserNameSignUp")
+        self.label_4 = QtWidgets.QLabel(parent=SignUpWindow)
         self.label_4.setGeometry(QtCore.QRect(760, 350, 361, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -58,10 +58,10 @@ class Ui_SignInWindow(object):
         font.setWeight(50)
         self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
-        self.lineEditPassWordSignin = QtWidgets.QLineEdit(parent=SignInWindow)
-        self.lineEditPassWordSignin.setGeometry(QtCore.QRect(760, 460, 361, 51))
-        self.lineEditPassWordSignin.setObjectName("lineEditPassWordSignin")
-        self.label_6 = QtWidgets.QLabel(parent=SignInWindow)
+        self.lineEditPassWordSignUp = QtWidgets.QLineEdit(parent=SignUpWindow)
+        self.lineEditPassWordSignUp.setGeometry(QtCore.QRect(760, 460, 361, 51))
+        self.lineEditPassWordSignUp.setObjectName("lineEditPassWordSignUp")
+        self.label_6 = QtWidgets.QLabel(parent=SignUpWindow)
         self.label_6.setGeometry(QtCore.QRect(760, 440, 361, 16))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -69,7 +69,7 @@ class Ui_SignInWindow(object):
         font.setWeight(50)
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
-        self.pushButtonLoginSignIn = QtWidgets.QPushButton(parent=SignInWindow)
+        self.pushButtonLoginSignIn = QtWidgets.QPushButton(parent=SignUpWindow)
         self.pushButtonLoginSignIn.setGeometry(QtCore.QRect(790, 610, 62, 19))
         font = QtGui.QFont()
         font.setBold(True)
@@ -77,15 +77,15 @@ class Ui_SignInWindow(object):
         self.pushButtonLoginSignIn.setFont(font)
         self.pushButtonLoginSignIn.setObjectName("pushButtonLoginSignIn")
 
-        self.retranslateUi(SignInWindow)
-        QtCore.QMetaObject.connectSlotsByName(SignInWindow)
+        self.retranslateUi(SignUpWindow)
+        QtCore.QMetaObject.connectSlotsByName(SignUpWindow)
 
-    def retranslateUi(self, SignInWindow):
+    def retranslateUi(self, SignUpWindow):
         _translate = QtCore.QCoreApplication.translate
-        SignInWindow.setWindowTitle(_translate("SignInWindow", "Form"))
-        self.label_2.setText(_translate("SignInWindow", "User Name"))
-        self.label_5.setText(_translate("SignInWindow", "or "))
-        self.pushButtonCreateNewAccount.setText(_translate("SignInWindow", "Create New Account"))
-        self.label_4.setText(_translate("SignInWindow", "Email Address"))
-        self.label_6.setText(_translate("SignInWindow", "Password"))
-        self.pushButtonLoginSignIn.setText(_translate("SignInWindow", "Login"))
+        SignUpWindow.setWindowTitle(_translate("SignUpWindow", "Form"))
+        self.label_2.setText(_translate("SignUpWindow", "User Name"))
+        self.label_5.setText(_translate("SignUpWindow", "or "))
+        self.pushButtonCreateNewAccount.setText(_translate("SignUpWindow", "Create New Account"))
+        self.label_4.setText(_translate("SignUpWindow", "Email Address"))
+        self.label_6.setText(_translate("SignUpWindow", "Password"))
+        self.pushButtonLoginSignIn.setText(_translate("SignUpWindow", "Login"))

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SignInWindow</class>
- <widget class="QWidget" name="SignInWindow">
+ <class>SignUpWindow</class>
+ <widget class="QWidget" name="SignUpWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -103,7 +103,7 @@
     <string>Create New Account</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEditUserNameSignIn">
+  <widget class="QLineEdit" name="lineEditUserNameSignUp">
    <property name="geometry">
     <rect>
      <x>760</x>
@@ -133,7 +133,7 @@
     <string>Email Address</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEditPassWordSignin">
+  <widget class="QLineEdit" name="lineEditPassWordSignUp">
    <property name="geometry">
     <rect>
      <x>760</x>
