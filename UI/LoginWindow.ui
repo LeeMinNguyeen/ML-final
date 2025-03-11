@@ -10,6 +10,11 @@
     <height>852</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Montserrat Medium</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -43,6 +48,7 @@
    </property>
    <property name="font">
     <font>
+     <family>Montserrat Medium</family>
      <pointsize>12</pointsize>
      <weight>50</weight>
      <bold>false</bold>
@@ -63,6 +69,7 @@
    </property>
    <property name="font">
     <font>
+     <family>Montserrat Medium</family>
      <pointsize>12</pointsize>
      <weight>50</weight>
      <bold>false</bold>
@@ -141,6 +148,11 @@
      <height>51</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLineEdit" name="lineEditUserNameLogin">
    <property name="geometry">
@@ -150,6 +162,32 @@
      <width>371</width>
      <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>160</y>
+     <width>441</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Caslon Pro</family>
+     <pointsize>36</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Forex trading &amp;
+back testing system
+</string>
    </property>
   </widget>
  </widget>
