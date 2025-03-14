@@ -20,7 +20,7 @@ class Ui_SignUpWindow(object):
         self.label = QtWidgets.QLabel(parent=SignUpWindow)
         self.label.setGeometry(QtCore.QRect(0, 0, 1279, 852))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/SignUpBg.png"))
+        self.label.setPixmap(QtGui.QPixmap("./Images/SignUpBg.png"))
         self.label.setObjectName("label")
         self.pushButtonLoginSignIn = QtWidgets.QPushButton(parent=SignUpWindow)
         self.pushButtonLoginSignIn.setGeometry(QtCore.QRect(770, 660, 62, 19))
