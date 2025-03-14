@@ -35,6 +35,22 @@ class connector():
             print(e)
             return None
         
+    def createCollection(self, collection_name):
+        try:
+            self.db.create_collection(collection_name)
+            print(f"Collection '{collection_name}' created successfully.")
+        except Exception as e:
+            print(e)
+        
+    def ImportData(self, data = list, import_collection = str):
+        collection = self.db[import_collection]
+        try:
+            result = collection.insert_many(data)
+            return result
+        except Exception as e:
+            print(e)
+            return None
+        
 if __name__ == "__main__":
     connector = connector()
     connector.connects()
