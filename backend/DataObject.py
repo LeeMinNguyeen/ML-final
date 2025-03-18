@@ -1,7 +1,6 @@
 from connect_database import connector
 import pandas as pd
 import mplfinance as mpf
-import matplotlib.pyplot as plt
         
 class ForexData:
     def __init__(self, currency_pair, grainularity):
@@ -12,23 +11,37 @@ class ForexData:
         self.grainularity = grainularity
         
         self.collection_name = self.currency_pair.replace("/", "") + "_" + self.grainularity
+    
+    def __storecache(self, df):
+        file = "backend/data/cache/" + self.collection_name + ".csv"
+        df.to_csv(file)
         
-    def GetData(self):
-        print(f"load: {self.collection_name}")
+    def __loaddata(self):
         collection = self.db.db[self.collection_name]
         self.data = collection.find()
         
         self.df = pd.DataFrame(list(self.data))
+        self.__storecache(self.df)
+        return self.df
+    
+    def GetData(self):
+        try:
+            self.df = pd.read_csv("backend/data/cache/" + self.collection_name + ".csv")
+            print(f"load: {self.collection_name}")
+        except:
+            self.__loaddata()
+        return self.df
 
     def CandlePlot(self, startdate, enddate):
-        self.df = self.df.set_index("Time")
-        self.df.index = pd.to_datetime(self.df.index, unit='s') # update unit = to be dynamic
+        self.df['Time'] = pd.to_datetime(self.df['Time'])
+        self.df.set_index('Time', inplace=True)
+        
         self.df = self.df.loc[startdate:enddate]
         
-        mpf.plot(self.df, type='candle', style='charles', volume=True, ylabel='Price', ylabel_lower='Volume', figratio=(12, 6), figscale=1.5)
-        plt.show()
+        fig, ax = mpf.plot(self.df, type='candle', style='charles', title=self.currency_pair + " " + self.grainularity, returnfig=True, volume = True)
+        return fig
         
 if __name__ == "__main__":
-    data = ForexData(currency_pair = "EUR/USD", grainularity = "S1")
+    data = ForexData(currency_pair = "EUR/USD", grainularity = "H4")
     df = data.GetData()
     data.CandlePlot(startdate = "2024-04-01", enddate = "2024-04-02")

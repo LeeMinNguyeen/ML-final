@@ -8,6 +8,10 @@ from SignUpWindow import Ui_SignUpWindow
 from connect_database import connector
 from MainWindow import Ui_MainWindow
 from DataObject import ForexData
+from datetime import datetime
+
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
 
 class MongoDatabase(connector):
     def __init__(self):
@@ -22,12 +26,20 @@ class MainScreen(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.db = MongoDatabase()
         self.MainWindow = MainWindow
+
+        self.GetDateTime()
         self.GetCurrencyPairs()
         self.GetGrainularity()
+        
+        self.setUpSignals()
+        
+    def setUpSignals(self):
         self.comboBox_select_currency.currentIndexChanged.connect(self.UpdateCurrencyPairs)
         self.comboBox_select_granularity.currentIndexChanged.connect(self.UpdateGrainularity)
         self.pushButton_load.clicked.connect(self.LoadData)
-        
+        self.StartdateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
+        self.EnddateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
+    
     def UpdateCurrencyPairs(self):
         self.currency_pair = self.comboBox_select_currency.currentText()
         self.comboBox_select_currency.setCurrentText(self.currency_pair)
@@ -42,8 +54,16 @@ class MainScreen(Ui_MainWindow):
         
         self.data = ForexData(currency_pair = self.currency_pair, grainularity = self.grainularity)
         self.data.GetData()
-        self.data.CandlePlot(startdate = "2024-04-01", enddate = "2024-04-02")
-            
+        
+        self.DrawCandlePlot()
+        
+    def DrawCandlePlot(self):
+        if not(self.verticalLayout.isEmpty()):
+            self.verticalLayout.removeWidget(self.canvas)
+        fig = self.data.CandlePlot(startdate = self.StartDate, enddate = self.EndDate)
+        self.canvas = FigureCanvas(fig)
+        self.verticalLayout.addWidget(self.canvas)
+        
     def GetGrainularity(self):
         self.Grainularity = []
         for collection in self.db.db.list_collection_names():
@@ -61,6 +81,10 @@ class MainScreen(Ui_MainWindow):
                 if pair not in self.CurrencyPairs:
                     self.CurrencyPairs.append(pair)
         self.comboBox_select_currency.addItems(self.CurrencyPairs)
+        
+    def GetDateTime(self):
+        self.StartDate = datetime.strptime(self.StartdateTimeEdit.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        self.EndDate = datetime.strptime(self.EnddateTimeEdit.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
     
     def showWindow(self):
         self.MainWindow.show()
@@ -159,7 +183,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
     MainWindow = QtWidgets.QMainWindow()
-    ui = LoginUI()
+    ui = MainScreen()
     ui.setupUi(MainWindow)
     ui.showWindow()
     
