@@ -113,7 +113,8 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Forex Dash"))
         self.label_select_currency.setText(_translate("MainWindow", "Select Currency"))
-        self.comboBox_select_currency.setItemText(0, _translate("MainWindow", "Euro"))
+        self.comboBox_select_currency.setItemText(0, _translate("MainWindow", "Currency Pairs"))
+        self.comboBox_select_granularity.setItemText(0, _translate("MainWindow", "Granularity"))
         self.label_select_granularity.setText(_translate("MainWindow", "Select Granularity"))
         self.pushButton_load.setText(_translate("MainWindow", "Load"))
         self.label_num_rows.setText(_translate("MainWindow", "Num. Rows."))

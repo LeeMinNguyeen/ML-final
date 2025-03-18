@@ -7,6 +7,7 @@ from LoginWindow import Ui_LoginWindow
 from SignUpWindow import Ui_SignUpWindow
 from connect_database import connector
 from MainWindow import Ui_MainWindow
+from DataObject import ForexData
 
 class MongoDatabase(connector):
     def __init__(self):
@@ -19,7 +20,47 @@ class MongoDatabase(connector):
 class MainScreen(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
+        self.db = MongoDatabase()
         self.MainWindow = MainWindow
+        self.GetCurrencyPairs()
+        self.GetGrainularity()
+        self.comboBox_select_currency.currentIndexChanged.connect(self.UpdateCurrencyPairs)
+        self.comboBox_select_granularity.currentIndexChanged.connect(self.UpdateGrainularity)
+        self.pushButton_load.clicked.connect(self.LoadData)
+        
+    def UpdateCurrencyPairs(self):
+        self.currency_pair = self.comboBox_select_currency.currentText()
+        self.comboBox_select_currency.setCurrentText(self.currency_pair)
+        
+    def UpdateGrainularity(self):
+        self.grainularity = self.comboBox_select_granularity.currentText()
+        self.comboBox_select_granularity.setCurrentText(self.grainularity)
+        
+    def LoadData(self):
+        self.currency_pair = self.comboBox_select_currency.currentText()
+        self.grainularity = self.comboBox_select_granularity.currentText()
+        
+        self.data = ForexData(currency_pair = self.currency_pair, grainularity = self.grainularity)
+        self.data.GetData()
+        self.data.CandlePlot(startdate = "2024-04-01", enddate = "2024-04-02")
+        
+    def GetGrainularity(self):
+        self.Grainularity = []
+        for collection in self.db.db.list_collection_names():
+            if collection != "Users":
+                grain = collection.split('_')[1]
+                if grain not in self.Grainularity:
+                    self.Grainularity.append(grain)
+        self.comboBox_select_granularity.addItems(self.Grainularity)
+        
+    def GetCurrencyPairs(self):
+        self.CurrencyPairs = []
+        for collection in self.db.db.list_collection_names():
+            if collection != "Users":
+                pair = collection[:3] + "/" + collection[3:6]
+                if pair not in self.CurrencyPairs:
+                    self.CurrencyPairs.append(pair)
+        self.comboBox_select_currency.addItems(self.CurrencyPairs)
     
     def showWindow(self):
         self.MainWindow.show()
