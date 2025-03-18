@@ -2,20 +2,15 @@ from connect_database import connector
 import pandas as pd
 import mplfinance as mpf
 import matplotlib.pyplot as plt
-
-class MongoDatabase(connector):
-    def __init__(self):
-        super().__init__()
-        self.connects()
-        
-    def disconnect(self):
-        self.connector.client.close()
         
 class ForexData:
     def __init__(self, currency_pair, grainularity):
-        self.db = MongoDatabase()
+        self.db = connector()
+        self.db.connects()
+        
         self.currency_pair = currency_pair
         self.grainularity = grainularity
+        
         self.collection_name = self.currency_pair.replace("/", "") + "_" + self.grainularity
         
     def GetData(self):

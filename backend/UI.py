@@ -43,7 +43,7 @@ class MainScreen(Ui_MainWindow):
         self.data = ForexData(currency_pair = self.currency_pair, grainularity = self.grainularity)
         self.data.GetData()
         self.data.CandlePlot(startdate = "2024-04-01", enddate = "2024-04-02")
-        
+            
     def GetGrainularity(self):
         self.Grainularity = []
         for collection in self.db.db.list_collection_names():
