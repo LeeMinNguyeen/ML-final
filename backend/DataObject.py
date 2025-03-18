@@ -26,11 +26,12 @@ class ForexData:
     
     def GetData(self):
         try:
-            self.df = pd.read_csv("backend/data/cache/" + self.collection_name + ".csv")
+            self.df = pd.read_csv(f"backend/data/cache/{self.collection_name}.csv")
             print(f"load: {self.collection_name}")
         except:
             self.__loaddata()
-        return self.df
+        finally:
+            return self.df
 
     def CandlePlot(self, startdate, enddate):
         self.df['Time'] = pd.to_datetime(self.df['Time'])

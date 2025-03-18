@@ -20,6 +20,9 @@ class MongoDatabase(connector):
         
     def disconnect(self):
         self.connector.client.close()
+        
+class Backtest():
+    pass
 
 class MainScreen(Ui_MainWindow):
     def setupUi(self, MainWindow):
@@ -39,6 +42,7 @@ class MainScreen(Ui_MainWindow):
         self.pushButton_load.clicked.connect(self.LoadData)
         self.StartdateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
         self.EnddateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
+        self.actionExit.triggered.connect(self.MainWindow.close)
     
     def UpdateCurrencyPairs(self):
         self.currency_pair = self.comboBox_select_currency.currentText()
