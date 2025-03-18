@@ -38,23 +38,23 @@ class SignUpUI(Ui_SignUpWindow):
     def CreateNewAccount(self):
         print("Create New Account")
         email = self.lineEditEmailAddress.text()
-        username = self.lineEditUserNameSignIn.text()
-        password = self.lineEditPassWordSignin.text()
+        username = self.lineEditUserNameSignUp.text()
+        password = self.lineEditPassWordSignUp.text()
         
         # Check for existing user or email
         collection = self.db.db["Users"]
-        check1 = collection.find_one({"username": username})
-        check2 = collection.find_one({"email": email})
-        if check1:
+        duplicate_username = collection.find_one({"username": username})
+        duplicate_email = collection.find_one({"email": email})
+        if duplicate_email:
             print("User already exists")
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.showMessage('User already exists')
+            error_dialog = QtWidgets.QMessageBox()
+            error_dialog.setText('User already exists')
             error_dialog.exec()
             return
-        elif check2:
+        elif duplicate_username:
             print("Email already exists")
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.showMessage('Email already exists')
+            error_dialog = QtWidgets.QMessageBox()
+            error_dialog.setText('Email already exists')
             error_dialog.exec()
             return
         
@@ -64,8 +64,8 @@ class SignUpUI(Ui_SignUpWindow):
             self.openLoginWindow()
         else:
             print("Failed to create new user")
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.showMessage('Failed to create new user')
+            error_dialog = QtWidgets.QMessageBox()
+            error_dialog.setText('Failed to create new user')
             error_dialog.exec()
         
     def openLoginWindow(self):
@@ -90,16 +90,14 @@ class LoginUI(Ui_LoginWindow):
         username = self.lineEditUserNameLogin.text()
         password = self.lineEditPassWordLogin.text()
         
-        print(username, password)
-        
         result = self.db.login(username = username, password = password)
         if result:
             print("Login Successful")
             self.openMainWindow()
         else:
             print("Login Failed")
-            error_dialog = QtWidgets.QErrorMessage()
-            error_dialog.showMessage('Login Failed: Invalid username or password')
+            error_dialog = QtWidgets.QMessageBox()
+            error_dialog.setText('Login Failed: Invalid username or password')
             error_dialog.exec()
         
     def openSignInWindow(self):
