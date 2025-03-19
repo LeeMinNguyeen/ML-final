@@ -9,6 +9,8 @@ from connect_database import connector
 from MainWindow import Ui_MainWindow
 from DataObject import ForexData
 from datetime import datetime
+from Backtesting import TrendFollow
+from predict import LSTM
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -38,36 +40,26 @@ class MainScreen(Ui_MainWindow):
         
     def setUpSignals(self):
         self.comboBox_select_currency.currentIndexChanged.connect(self.UpdateCurrencyPairs)
+        self.comboBox_select_currency_2.currentIndexChanged.connect(self.UpdateCurrencyPairs2)
+        self.comboBox_select_currency_5.currentIndexChanged.connect(self.UpdateCurrencyPairs5)
+        
         self.comboBox_select_granularity.currentIndexChanged.connect(self.UpdateGrainularity)
-        self.pushButton_load.clicked.connect(self.LoadData)
+        self.comboBox_select_granularity_2.currentIndexChanged.connect(self.UpdateGrainularity2)
+        self.comboBox_select_granularity_5.currentIndexChanged.connect(self.UpdateGrainularity5)
+        
+        self.pushButton_load.clicked.connect(self.LoadGraph)
+        self.pushButton_StartBacktest.clicked.connect(self.StartBacktest)
+        self.pushButtonSaveResult.clicked.connect(self.SaveBacktest)
+        
         self.StartdateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
         self.EnddateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
-        self.actionExit.triggered.connect(self.MainWindow.close)
+        
+        self.StartdateTimeEdit_2.dateTimeChanged.connect(self.GetDateTime2)
+        self.EnddateTimeEdit_2.dateTimeChanged.connect(self.GetDateTime2)
+        
+        self.StartdateTimeEdit_5.dateTimeChanged.connect(self.GetDateTime3)
+        self.EnddateTimeEdit_5.dateTimeChanged.connect(self.GetDateTime3)
     
-    def UpdateCurrencyPairs(self):
-        self.currency_pair = self.comboBox_select_currency.currentText()
-        self.comboBox_select_currency.setCurrentText(self.currency_pair)
-        
-    def UpdateGrainularity(self):
-        self.grainularity = self.comboBox_select_granularity.currentText()
-        self.comboBox_select_granularity.setCurrentText(self.grainularity)
-        
-    def LoadData(self):
-        self.currency_pair = self.comboBox_select_currency.currentText()
-        self.grainularity = self.comboBox_select_granularity.currentText()
-        
-        self.data = ForexData(currency_pair = self.currency_pair, grainularity = self.grainularity)
-        self.data.GetData()
-        
-        self.DrawCandlePlot()
-        
-    def DrawCandlePlot(self):
-        if not(self.verticalLayout.isEmpty()):
-            self.verticalLayout.removeWidget(self.canvas)
-        fig = self.data.CandlePlot(startdate = self.StartDate, enddate = self.EndDate)
-        self.canvas = FigureCanvas(fig)
-        self.verticalLayout.addWidget(self.canvas)
-        
     def GetGrainularity(self):
         self.Grainularity = []
         for collection in self.db.db.list_collection_names():
@@ -76,7 +68,8 @@ class MainScreen(Ui_MainWindow):
                 if grain not in self.Grainularity:
                     self.Grainularity.append(grain)
         self.comboBox_select_granularity.addItems(self.Grainularity)
-        
+        self.comboBox_select_granularity_2.addItems(self.Grainularity)
+        self.comboBox_select_granularity_5.addItems(self.Grainularity)
     def GetCurrencyPairs(self):
         self.CurrencyPairs = []
         for collection in self.db.db.list_collection_names():
@@ -85,11 +78,158 @@ class MainScreen(Ui_MainWindow):
                 if pair not in self.CurrencyPairs:
                     self.CurrencyPairs.append(pair)
         self.comboBox_select_currency.addItems(self.CurrencyPairs)
+        self.comboBox_select_currency_2.addItems(self.CurrencyPairs)
+        self.comboBox_select_currency_5.addItems(self.CurrencyPairs)
+    
+    def UpdateCurrencyPairs(self):
+        self.currency_pair = self.comboBox_select_currency.currentText()
+        self.comboBox_select_currency.setCurrentText(self.currency_pair)
+        self.comboBox_select_currency_2.setCurrentText(self.currency_pair)
+        self.comboBox_select_currency_5.setCurrentText(self.currency_pair)
+    def UpdateCurrencyPairs2(self):
+        self.currency_pair = self.comboBox_select_currency_2.currentText()
+        self.comboBox_select_currency.setCurrentText(self.currency_pair)
+        self.comboBox_select_currency_2.setCurrentText(self.currency_pair)
+        self.comboBox_select_currency_5.setCurrentText(self.currency_pair)
+    def UpdateCurrencyPairs5(self):
+        self.currency_pair = self.comboBox_select_currency_5.currentText()
+        self.comboBox_select_currency.setCurrentText(self.currency_pair)
+        self.comboBox_select_currency_2.setCurrentText(self.currency_pair)
+        self.comboBox_select_currency_5.setCurrentText(self.currency_pair)
         
+    def UpdateGrainularity(self):
+        self.grainularity = self.comboBox_select_granularity.currentText()
+        self.comboBox_select_granularity.setCurrentText(self.grainularity)
+        self.comboBox_select_granularity_2.setCurrentText(self.grainularity)
+        self.comboBox_select_granularity_5.setCurrentText(self.grainularity)
+    def UpdateGrainularity2(self):
+        self.grainularity = self.comboBox_select_granularity_2.currentText()
+        self.comboBox_select_granularity.setCurrentText(self.grainularity)
+        self.comboBox_select_granularity_2.setCurrentText(self.grainularity)
+        self.comboBox_select_granularity_5.setCurrentText(self.grainularity)
+    def UpdateGrainularity5(self):
+        self.grainularity = self.comboBox_select_granularity_5.currentText()
+        self.comboBox_select_granularity.setCurrentText(self.grainularity)
+        self.comboBox_select_granularity_2.setCurrentText(self.grainularity)
+        self.comboBox_select_granularity_5.setCurrentText(self.grainularity)
+    
     def GetDateTime(self):
         self.StartDate = datetime.strptime(self.StartdateTimeEdit.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
         self.EndDate = datetime.strptime(self.EnddateTimeEdit.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        
+        self.StartdateTimeEdit_2.setDateTime(self.StartdateTimeEdit.dateTime())
+        self.EnddateTimeEdit_2.setDateTime(self.EnddateTimeEdit.dateTime())
+        
+        self.StartdateTimeEdit_5.setDateTime(self.StartdateTimeEdit.dateTime())
+        self.EnddateTimeEdit_5.setDateTime(self.EnddateTimeEdit.dateTime())
+    def GetDateTime2(self):
+        self.StartDate = datetime.strptime(self.StartdateTimeEdit_2.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        self.EndDate = datetime.strptime(self.EnddateTimeEdit_2.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        
+        self.StartdateTimeEdit.setDateTime(self.StartdateTimeEdit_2.dateTime())
+        self.EnddateTimeEdit.setDateTime(self.EnddateTimeEdit_2.dateTime())
+        
+        self.StartdateTimeEdit_5.setDateTime(self.StartdateTimeEdit_2.dateTime())
+        self.EnddateTimeEdit_5.setDateTime(self.EnddateTimeEdit_2.dateTime())
+    def GetDateTime3(self):
+        self.StartDate = datetime.strptime(self.StartdateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        self.EndDate = datetime.strptime(self.EnddateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        
+        self.StartdateTimeEdit.setDateTime(self.StartdateTimeEdit_5.dateTime())
+        self.EnddateTimeEdit.setDateTime(self.EnddateTimeEdit_5.dateTime())
+        
+        self.StartdateTimeEdit_2.setDateTime(self.StartdateTimeEdit_5.dateTime())
+        self.EnddateTimeEdit_2.setDateTime(self.EnddateTimeEdit_5.dateTime())
     
+    def LoadData(self, currency_pair = None, grainularity = None):
+        self.data = ForexData(currency_pair = currency_pair, grainularity = grainularity)
+        self.data.GetData()
+    
+    def LoadGraph(self):
+        self.currency_pair = self.comboBox_select_currency.currentText()
+        self.grainularity = self.comboBox_select_granularity.currentText()
+        
+        self.LoadData(currency_pair = self.currency_pair, grainularity = self.grainularity)
+        
+        if not(self.verticalLayout.isEmpty()):
+            self.verticalLayout.removeWidget(self.canvas)
+        fig = self.data.CandlePlot(startdate = self.StartDate, enddate = self.EndDate)
+        self.canvas = FigureCanvas(fig)
+        self.verticalLayout.addWidget(self.canvas)
+        
+    def StartBacktest(self):
+        self.currency_pair = self.comboBox_select_currency_2.currentText()
+        self.grainularity = self.comboBox_select_granularity_2.currentText()
+        StartMoney = float(self.StartMoney.text())
+        MaxPosition = int(self.MaxPosition.text())
+        Slippage = float(self.Slippage.text())
+        MA_Length = int(self.MA_Length.text())
+        self.StartDate = datetime.strptime(self.StartdateTimeEdit_2.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        self.EndDate = datetime.strptime(self.EnddateTimeEdit_2.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        
+        self.LoadData(currency_pair = self.currency_pair, grainularity = self.grainularity)
+        
+        self.backtest = TrendFollow(data = self.data.df, start = self.StartDate, end = self.EndDate)
+        self.backtest_result = self.backtest.trade(length = MA_Length, money = StartMoney, slippage = Slippage, max_position = MaxPosition)
+        self.stats = self.backtest.CalculateStats()
+        
+        action_table = self.backtest_result[["Action", "position_count", "equity"]]
+        self.tableWidget.clear()
+        self.tableWidget.setHorizontalHeaderLabels(action_table.columns)
+        self.tableWidget.setRowCount(len(action_table))
+        self.tableWidget.setColumnCount(len(action_table.columns))
+        for i in range(len(action_table)):
+            for j in range(len(action_table.columns)):
+                self.tableWidget.setItem(i, j, QtWidgets.QTableWidgetItem(str(action_table.iloc[i, j])))
+                
+        self.DrawBackTestGraph()
+        self.ShowStats()
+    
+    def DrawBackTestGraph(self):
+        if not(self.verticalLayout_Output.isEmpty()):
+            self.verticalLayout_Output.removeWidget(self.canvas_2)
+        plot_result = self.backtest_result[["equity"]]
+        ax = plot_result.plot(logy=True)
+        fig = ax.get_figure()
+        self.canvas_2 = FigureCanvas(fig)
+        self.verticalLayout_Output.addWidget(self.canvas_2)
+    
+    def ShowStats(self):
+        stats_dialog = QtWidgets.QMessageBox()
+        stats_dialog.setWindowTitle("Backtest Statistics")
+        stats_dialog.setText(self.stats)
+        stats_dialog.exec()
+        
+    def SaveBacktest(self):
+        folder = "backend/data/Backtest/"
+        self.backtest_result.to_csv(f"{folder}Backtest_Result.csv")
+        with open(f"{folder}Backtest_Stats.csv", "w") as file:
+            file.write(self.stats)
+        
+        success_dialog = QtWidgets.QMessageBox()
+        success_dialog.setWindowTitle("Save Successful")
+        success_dialog.setText("Backtest results and statistics have been saved successfully.")
+        success_dialog.exec()
+
+    def StartPrediction(self):
+        self.currency_pair = self.comboBox_select_currency_5.currentText()
+        self.grainularity = self.comboBox_select_granularity_5.currentText()
+        self.StartDate = datetime.strptime(self.StartdateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        self.EndDate = datetime.strptime(self.EnddateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
+        
+        self.LoadData(currency_pair = self.currency_pair, grainularity = self.grainularity)
+        
+        predict = LSTM(data = self.data.df, start = self.StartDate, end = self.EndDate)
+        
+        
+        
+
+    def DrawPredictionGraph(self):
+        pass
+    
+    def SavePrediction(self):
+        pass
+
     def showWindow(self):
         self.MainWindow.show()
 
