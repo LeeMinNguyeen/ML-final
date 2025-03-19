@@ -20,7 +20,7 @@ class LSTM_model:
 
         self.data['Time'] = pd.to_datetime(self.data['Time'])
         self.data.set_index('Time', inplace=True)
-        self.data.loc[start:end]
+        self.data = self.data.loc[start:end]
                 
         self.close_price = self.data['Close'].values.reshape(-1, 1)
         

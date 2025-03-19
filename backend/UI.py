@@ -73,7 +73,6 @@ class MainScreen(Ui_MainWindow):
                     self.Grainularity.append(grain)
         self.comboBox_select_granularity.addItems(self.Grainularity)
         self.comboBox_select_granularity_2.addItems(self.Grainularity)
-        self.comboBox_select_granularity_5.addItems(self.Grainularity)
     def GetCurrencyPairs(self):
         self.CurrencyPairs = []
         for collection in self.db.db.list_collection_names():
@@ -218,7 +217,6 @@ class MainScreen(Ui_MainWindow):
         self.predict = LSTM_model(data = self.data.df, start = self.StartDate, end = self.EndDate)
         self.predict.GetModel("LSTM")
         self.predict.Predict()
-        print("Predicted")
         self.DrawPredictionGraph()
         
     def DrawPredictionGraph(self):
