@@ -1,9 +1,10 @@
+from UI import LoginUI
 import sys, os
 
 sys.path.append(os.path.abspath('./UI'))
 
 from PyQt6 import QtWidgets
-from backend.UI import LoginUI, SignInUI, MainScreen, MongoDatabase
+
 
 app = QtWidgets.QApplication(sys.argv)
 
