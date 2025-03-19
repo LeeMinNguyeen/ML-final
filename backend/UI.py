@@ -1,3 +1,4 @@
+from predict import LSTM_model
 import sys, os
 
 sys.path.append(os.path.abspath('./UI'))
@@ -8,9 +9,10 @@ from SignUpWindow import Ui_SignUpWindow
 from connect_database import connector
 from MainWindow import Ui_MainWindow
 from DataObject import ForexData
+
 from datetime import datetime
 from Backtesting import TrendFollow
-from predict import LSTM
+
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -45,11 +47,13 @@ class MainScreen(Ui_MainWindow):
         
         self.comboBox_select_granularity.currentIndexChanged.connect(self.UpdateGrainularity)
         self.comboBox_select_granularity_2.currentIndexChanged.connect(self.UpdateGrainularity2)
-        self.comboBox_select_granularity_5.currentIndexChanged.connect(self.UpdateGrainularity5)
         
         self.pushButton_load.clicked.connect(self.LoadGraph)
         self.pushButton_StartBacktest.clicked.connect(self.StartBacktest)
         self.pushButtonSaveResult.clicked.connect(self.SaveBacktest)
+        
+        self.pushButton_Predict.clicked.connect(self.StartPrediction)
+        self.pushButton_SavePrediction.clicked.connect(self.SavePrediction)
         
         self.StartdateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
         self.EnddateTimeEdit.dateTimeChanged.connect(self.GetDateTime)
@@ -101,17 +105,10 @@ class MainScreen(Ui_MainWindow):
         self.grainularity = self.comboBox_select_granularity.currentText()
         self.comboBox_select_granularity.setCurrentText(self.grainularity)
         self.comboBox_select_granularity_2.setCurrentText(self.grainularity)
-        self.comboBox_select_granularity_5.setCurrentText(self.grainularity)
     def UpdateGrainularity2(self):
         self.grainularity = self.comboBox_select_granularity_2.currentText()
         self.comboBox_select_granularity.setCurrentText(self.grainularity)
         self.comboBox_select_granularity_2.setCurrentText(self.grainularity)
-        self.comboBox_select_granularity_5.setCurrentText(self.grainularity)
-    def UpdateGrainularity5(self):
-        self.grainularity = self.comboBox_select_granularity_5.currentText()
-        self.comboBox_select_granularity.setCurrentText(self.grainularity)
-        self.comboBox_select_granularity_2.setCurrentText(self.grainularity)
-        self.comboBox_select_granularity_5.setCurrentText(self.grainularity)
     
     def GetDateTime(self):
         self.StartDate = datetime.strptime(self.StartdateTimeEdit.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
@@ -213,22 +210,26 @@ class MainScreen(Ui_MainWindow):
 
     def StartPrediction(self):
         self.currency_pair = self.comboBox_select_currency_5.currentText()
-        self.grainularity = self.comboBox_select_granularity_5.currentText()
         self.StartDate = datetime.strptime(self.StartdateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
         self.EndDate = datetime.strptime(self.EnddateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
         
-        self.LoadData(currency_pair = self.currency_pair, grainularity = self.grainularity)
+        self.LoadData(currency_pair = self.currency_pair, grainularity = "H4")
         
-        predict = LSTM(data = self.data.df, start = self.StartDate, end = self.EndDate)
+        self.predict = LSTM_model(data = self.data.df, start = self.StartDate, end = self.EndDate)
+        self.predict.GetModel("LSTM")
+        self.predict.Predict()
+        print("Predicted")
+        self.DrawPredictionGraph()
         
-        
-        
-
     def DrawPredictionGraph(self):
-        pass
+        if not(self.verticalLayout_4.isEmpty()):
+            self.verticalLayout_4.removeWidget(self.canvas_3)
+        fig = self.predict.DrawResultGraph()
+        self.canvas_3 = FigureCanvas(fig)
+        self.verticalLayout_4.addWidget(self.canvas_3)
     
     def SavePrediction(self):
-        pass
+        self.predict.SaveModel(self.predict.model, "LSTM")
 
     def showWindow(self):
         self.MainWindow.show()
@@ -327,7 +328,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
     MainWindow = QtWidgets.QMainWindow()
-    ui = MainScreen()
+    ui = LoginUI()
     ui.setupUi(MainWindow)
     ui.showWindow()
     
