@@ -1,3 +1,5 @@
+from PyQt6.uic.properties import QtWidgets
+
 from UI.LoginWindow import Ui_LoginWindow
 import sys
 

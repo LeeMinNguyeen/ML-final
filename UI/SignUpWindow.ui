@@ -52,6 +52,9 @@
      <bold>true</bold>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(248, 230, 255)</string>
+   </property>
    <property name="text">
     <string>Login</string>
    </property>
@@ -198,6 +201,10 @@ back testing system
      <weight>75</weight>
      <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(219, 211, 255)</string>
    </property>
    <property name="text">
     <string>Create New Account</string>

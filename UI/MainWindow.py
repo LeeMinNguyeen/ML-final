@@ -136,7 +136,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.EnddateTimeEdit)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
-        self.tabWidget.addTab(self.Home, "")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/Home.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.tabWidget.addTab(self.Home, icon, "")
         self.Backtest = QtWidgets.QWidget()
         self.Backtest.setObjectName("Backtest")
         self.verticalLayoutWidget_4 = QtWidgets.QWidget(parent=self.Backtest)
@@ -222,12 +224,18 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "background-color: rgb(219, 211, 255)")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/check.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButton_StartBacktest.setIcon(icon1)
         self.pushButton_StartBacktest.setObjectName("pushButton_StartBacktest")
         self.verticalLayout_6.addWidget(self.pushButton_StartBacktest)
         self.pushButtonSaveResult = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
         self.pushButtonSaveResult.setStyleSheet("\n"
 "\n"
 "background-color: rgb(197, 215, 255)")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/save.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pushButtonSaveResult.setIcon(icon2)
         self.pushButtonSaveResult.setObjectName("pushButtonSaveResult")
         self.verticalLayout_6.addWidget(self.pushButtonSaveResult)
         self.layoutWidget_3 = QtWidgets.QWidget(parent=self.Backtest)
@@ -238,6 +246,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.label_options_2 = QtWidgets.QLabel(parent=self.layoutWidget_3)
         self.label_options_2.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_options_2.setFont(font)
         self.label_options_2.setStyleSheet("font: 22pt \"MS Shell Dlg 2\";\n"
 "QLabel {\n"
 "    background-color: transparent;\n"
@@ -312,7 +327,9 @@ class Ui_MainWindow(object):
         self.EnddateTimeEdit_2.setObjectName("EnddateTimeEdit_2")
         self.horizontalLayout_4.addWidget(self.EnddateTimeEdit_2)
         self.verticalLayout_5.addLayout(self.horizontalLayout_4)
-        self.tabWidget.addTab(self.Backtest, "")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/testing.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.tabWidget.addTab(self.Backtest, icon3, "")
         self.Prediction = QtWidgets.QWidget()
         self.Prediction.setObjectName("Prediction")
         self.layoutWidget_2 = QtWidgets.QWidget(parent=self.Prediction)
@@ -337,6 +354,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
+        self.label_options_5.setFrameShape(QtWidgets.QFrame.Shape.Panel)
+        self.label_options_5.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.label_options_5.setObjectName("label_options_5")
         self.verticalLayout_13.addWidget(self.label_options_5)
         self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
@@ -371,6 +390,8 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "    background-color: transparent; /* Hoặc đặt màu nền khác nếu cần */\n"
 "}")
+        self.label_price_chart_5.setFrameShape(QtWidgets.QFrame.Shape.Panel)
+        self.label_price_chart_5.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.label_price_chart_5.setObjectName("label_price_chart_5")
         self.verticalLayout_13.addWidget(self.label_price_chart_5)
         self.horizontalLayout_15 = QtWidgets.QHBoxLayout()
@@ -419,7 +440,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_9)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.tabWidget.addTab(self.Prediction, "")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/predict.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.tabWidget.addTab(self.Prediction, icon4, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -432,7 +455,7 @@ class Ui_MainWindow(object):
         self.actionExit.setObjectName("actionExit")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
