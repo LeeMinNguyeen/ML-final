@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Forex Dash</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(248, 244, 255);
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
@@ -40,31 +44,12 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Home">
      <attribute name="title">
       <string>Home</string>
      </attribute>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>-200</x>
-        <y>-9</y>
-        <width>1279</width>
-        <height>831</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../Images/Background.png</pixmap>
-      </property>
-     </widget>
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
@@ -96,11 +81,20 @@
              <height>50</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>MS Shell Dlg 2</family>
+             <pointsize>22</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
 QLabel {
-    background-color: transparent;
-    color: white; /* Hoặc màu chữ tùy chỉnh */
+   background-color: rgb(248, 230, 255)
+
 }</string>
            </property>
            <property name="text">
@@ -141,7 +135,8 @@ QLabel {
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(248, 230, 255)</string>
              </property>
              <property name="currentText">
               <string/>
@@ -173,7 +168,8 @@ QLabel {
            <item>
             <widget class="QComboBox" name="comboBox_select_granularity">
              <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+background-color: rgb(248, 230, 255)</string>
              </property>
             </widget>
            </item>
@@ -186,7 +182,10 @@ QLabel {
               </size>
              </property>
              <property name="styleSheet">
-              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;
+
+
+background-color: rgb(219, 211, 255)</string>
              </property>
              <property name="text">
               <string>Load</string>
@@ -241,6 +240,9 @@ QLabel {
                <height>16777215</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(248, 230, 255)</string>
+             </property>
              <property name="dateTime">
               <datetime>
                <hour>0</hour>
@@ -282,6 +284,10 @@ QLabel {
                <width>200</width>
                <height>16777215</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(248, 230, 255)
+</string>
              </property>
              <property name="dateTime">
               <datetime>
@@ -358,7 +364,11 @@ QLabel {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="StartMoney"/>
+          <widget class="QLineEdit" name="StartMoney">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -387,7 +397,11 @@ QLabel {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="MaxPosition"/>
+          <widget class="QLineEdit" name="MaxPosition">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -416,7 +430,11 @@ QLabel {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="Slippage"/>
+          <widget class="QLineEdit" name="Slippage">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -445,7 +463,11 @@ QLabel {
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="MA_Length"/>
+          <widget class="QLineEdit" name="MA_Length">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -477,7 +499,12 @@ QLabel {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+          <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;
+
+
+
+
+background-color: rgb(219, 211, 255)</string>
          </property>
          <property name="text">
           <string>Backtest</string>
@@ -486,31 +513,17 @@ QLabel {
        </item>
        <item>
         <widget class="QPushButton" name="pushButtonSaveResult">
+         <property name="styleSheet">
+          <string notr="true">
+
+background-color: rgb(197, 215, 255)</string>
+         </property>
          <property name="text">
           <string>Save Result</string>
          </property>
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>-140</x>
-        <y>-80</y>
-        <width>1279</width>
-        <height>831</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../Images/Background.png</pixmap>
-      </property>
      </widget>
      <widget class="QWidget" name="layoutWidget_3">
       <property name="geometry">
@@ -575,7 +588,10 @@ QLabel {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+
+
+background-color: rgb(248, 230, 255)</string>
            </property>
            <property name="currentText">
             <string/>
@@ -607,7 +623,10 @@ QLabel {
          <item>
           <widget class="QComboBox" name="comboBox_select_granularity_2">
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+
+
+background-color: rgb(248, 230, 255)</string>
            </property>
           </widget>
          </item>
@@ -659,6 +678,9 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
            <property name="dateTime">
             <datetime>
              <hour>0</hour>
@@ -701,6 +723,9 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
            <property name="dateTime">
             <datetime>
              <hour>23</hour>
@@ -723,10 +748,6 @@ QLabel {
        </item>
       </layout>
      </widget>
-     <zorder>label_3</zorder>
-     <zorder>verticalLayoutWidget_4</zorder>
-     <zorder>verticalLayoutWidget_2</zorder>
-     <zorder>layoutWidget_3</zorder>
     </widget>
     <widget class="QWidget" name="Prediction">
      <attribute name="title">
@@ -750,12 +771,23 @@ QLabel {
            <height>50</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>MS Shell Dlg 2</family>
+           <pointsize>22</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
 QLabel {
-    background-color: transparent;
+    background-color(244, 221, 255);
     color: white; /* Hoặc màu chữ tùy chỉnh */
-}</string>
+}
+
+</string>
          </property>
          <property name="text">
           <string>LSTM Prediction</string>
@@ -778,6 +810,15 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>MS Shell Dlg 2</family>
+             <pointsize>14</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
            </property>
@@ -795,7 +836,10 @@ QLabel {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
+
+background-color: rgb(248, 230, 255)
+</string>
            </property>
            <property name="currentText">
             <string/>
@@ -850,6 +894,9 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
            <property name="dateTime">
             <datetime>
              <hour>0</hour>
@@ -892,6 +939,9 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
            <property name="dateTime">
             <datetime>
              <hour>23</hour>
@@ -916,6 +966,10 @@ QLabel {
         <layout class="QHBoxLayout" name="horizontalLayout_16">
          <item>
           <widget class="QPushButton" name="pushButton_Predict">
+           <property name="styleSheet">
+            <string notr="true">
+background-color: rgb(219, 211, 255)</string>
+           </property>
            <property name="text">
             <string>Predict</string>
            </property>
@@ -923,6 +977,10 @@ QLabel {
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_SavePrediction">
+           <property name="styleSheet">
+            <string notr="true">
+background-color: rgb(219, 211, 255)</string>
+           </property>
            <property name="text">
             <string>Save Result</string>
            </property>
@@ -931,25 +989,6 @@ QLabel {
         </layout>
        </item>
       </layout>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>-200</x>
-        <y>-10</y>
-        <width>1279</width>
-        <height>831</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../Images/Background.png</pixmap>
-      </property>
      </widget>
      <widget class="QWidget" name="verticalLayoutWidget_9">
       <property name="geometry">
@@ -962,9 +1001,6 @@ QLabel {
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4"/>
      </widget>
-     <zorder>label_4</zorder>
-     <zorder>layoutWidget_2</zorder>
-     <zorder>verticalLayoutWidget_9</zorder>
     </widget>
    </widget>
   </widget>
@@ -975,7 +1011,7 @@ QLabel {
      <x>0</x>
      <y>0</y>
      <width>868</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'E:\Project\ML-final\UI\MainWindow.ui'
+# Form implementation generated from reading ui file 'D:\Uni\Nam3\Ki2\MLBA\Final\ML-final\UI\MainWindow.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -18,6 +18,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setStyleSheet("background-color: rgb(248, 244, 255);\n"
+"")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget = QtWidgets.QTabWidget(parent=self.centralwidget)
@@ -31,12 +33,6 @@ class Ui_MainWindow(object):
         self.tabWidget.setObjectName("tabWidget")
         self.Home = QtWidgets.QWidget()
         self.Home.setObjectName("Home")
-        self.label = QtWidgets.QLabel(parent=self.Home)
-        self.label.setGeometry(QtCore.QRect(-200, -9, 1279, 831))
-        self.label.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("E:\\Project\\ML-final\\UI\\../Images/Background.png"))
-        self.label.setObjectName("label")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.Home)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 250, 831, 481))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -53,10 +49,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label_options = QtWidgets.QLabel(parent=self.verticalLayoutWidget_3)
         self.label_options.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_options.setFont(font)
         self.label_options.setStyleSheet("font: 22pt \"MS Shell Dlg 2\";\n"
 "QLabel {\n"
-"    background-color: transparent;\n"
-"    color: white; /* Hoặc màu chữ tùy chỉnh */\n"
+"   background-color: rgb(248, 230, 255)\n"
+"\n"
 "}")
         self.label_options.setObjectName("label_options")
         self.verticalLayout_2.addWidget(self.label_options)
@@ -70,7 +73,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.label_select_currency)
         self.comboBox_select_currency = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_3)
         self.comboBox_select_currency.setMinimumSize(QtCore.QSize(15, 15))
-        self.comboBox_select_currency.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBox_select_currency.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(248, 230, 255)")
         self.comboBox_select_currency.setCurrentText("")
         self.comboBox_select_currency.setObjectName("comboBox_select_currency")
         self.horizontalLayout.addWidget(self.comboBox_select_currency)
@@ -81,12 +85,16 @@ class Ui_MainWindow(object):
         self.label_select_granularity.setObjectName("label_select_granularity")
         self.horizontalLayout.addWidget(self.label_select_granularity)
         self.comboBox_select_granularity = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_3)
-        self.comboBox_select_granularity.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBox_select_granularity.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
+"background-color: rgb(248, 230, 255)")
         self.comboBox_select_granularity.setObjectName("comboBox_select_granularity")
         self.horizontalLayout.addWidget(self.comboBox_select_granularity)
         self.pushButton_load = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_3)
         self.pushButton_load.setMinimumSize(QtCore.QSize(15, 15))
-        self.pushButton_load.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
+        self.pushButton_load.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";\n"
+"\n"
+"\n"
+"background-color: rgb(219, 211, 255)")
         self.pushButton_load.setObjectName("pushButton_load")
         self.horizontalLayout.addWidget(self.pushButton_load)
         self.verticalLayout_2.addLayout(self.horizontalLayout)
@@ -108,6 +116,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.label_num_rows)
         self.StartdateTimeEdit = QtWidgets.QDateTimeEdit(parent=self.verticalLayoutWidget_3)
         self.StartdateTimeEdit.setMaximumSize(QtCore.QSize(201, 16777215))
+        self.StartdateTimeEdit.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.StartdateTimeEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 1, 1), QtCore.QTime(0, 0, 0)))
         self.StartdateTimeEdit.setCalendarPopup(True)
         self.StartdateTimeEdit.setObjectName("StartdateTimeEdit")
@@ -119,6 +128,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.label_num_rows_2)
         self.EnddateTimeEdit = QtWidgets.QDateTimeEdit(parent=self.verticalLayoutWidget_3)
         self.EnddateTimeEdit.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.EnddateTimeEdit.setStyleSheet("background-color: rgb(248, 230, 255)\n"
+"")
         self.EnddateTimeEdit.setDateTime(QtCore.QDateTime(QtCore.QDate(2025, 3, 17), QtCore.QTime(23, 59, 59)))
         self.EnddateTimeEdit.setCalendarPopup(True)
         self.EnddateTimeEdit.setObjectName("EnddateTimeEdit")
@@ -149,6 +160,7 @@ class Ui_MainWindow(object):
         self.label_select_currency_5.setObjectName("label_select_currency_5")
         self.horizontalLayout_10.addWidget(self.label_select_currency_5)
         self.StartMoney = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_2)
+        self.StartMoney.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.StartMoney.setObjectName("StartMoney")
         self.horizontalLayout_10.addWidget(self.StartMoney)
         self.verticalLayout_6.addLayout(self.horizontalLayout_10)
@@ -161,6 +173,7 @@ class Ui_MainWindow(object):
         self.label_select_currency_7.setObjectName("label_select_currency_7")
         self.horizontalLayout_11.addWidget(self.label_select_currency_7)
         self.MaxPosition = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_2)
+        self.MaxPosition.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.MaxPosition.setObjectName("MaxPosition")
         self.horizontalLayout_11.addWidget(self.MaxPosition)
         self.verticalLayout_6.addLayout(self.horizontalLayout_11)
@@ -173,6 +186,7 @@ class Ui_MainWindow(object):
         self.label_select_currency_8.setObjectName("label_select_currency_8")
         self.horizontalLayout_12.addWidget(self.label_select_currency_8)
         self.Slippage = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_2)
+        self.Slippage.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.Slippage.setObjectName("Slippage")
         self.horizontalLayout_12.addWidget(self.Slippage)
         self.verticalLayout_6.addLayout(self.horizontalLayout_12)
@@ -185,6 +199,7 @@ class Ui_MainWindow(object):
         self.label_select_currency_9.setObjectName("label_select_currency_9")
         self.horizontalLayout_13.addWidget(self.label_select_currency_9)
         self.MA_Length = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_2)
+        self.MA_Length.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.MA_Length.setObjectName("MA_Length")
         self.horizontalLayout_13.addWidget(self.MA_Length)
         self.verticalLayout_6.addLayout(self.horizontalLayout_13)
@@ -201,18 +216,20 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.addWidget(self.tableWidget)
         self.pushButton_StartBacktest = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
         self.pushButton_StartBacktest.setMinimumSize(QtCore.QSize(15, 15))
-        self.pushButton_StartBacktest.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
+        self.pushButton_StartBacktest.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"background-color: rgb(219, 211, 255)")
         self.pushButton_StartBacktest.setObjectName("pushButton_StartBacktest")
         self.verticalLayout_6.addWidget(self.pushButton_StartBacktest)
         self.pushButtonSaveResult = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
+        self.pushButtonSaveResult.setStyleSheet("\n"
+"\n"
+"background-color: rgb(197, 215, 255)")
         self.pushButtonSaveResult.setObjectName("pushButtonSaveResult")
         self.verticalLayout_6.addWidget(self.pushButtonSaveResult)
-        self.label_3 = QtWidgets.QLabel(parent=self.Backtest)
-        self.label_3.setGeometry(QtCore.QRect(-140, -80, 1279, 831))
-        self.label_3.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("E:\\Project\\ML-final\\UI\\../Images/Background.png"))
-        self.label_3.setObjectName("label_3")
         self.layoutWidget_3 = QtWidgets.QWidget(parent=self.Backtest)
         self.layoutWidget_3.setGeometry(QtCore.QRect(20, 10, 831, 241))
         self.layoutWidget_3.setObjectName("layoutWidget_3")
@@ -238,7 +255,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.label_select_currency_2)
         self.comboBox_select_currency_2 = QtWidgets.QComboBox(parent=self.layoutWidget_3)
         self.comboBox_select_currency_2.setMinimumSize(QtCore.QSize(15, 15))
-        self.comboBox_select_currency_2.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBox_select_currency_2.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
+"\n"
+"\n"
+"background-color: rgb(248, 230, 255)")
         self.comboBox_select_currency_2.setCurrentText("")
         self.comboBox_select_currency_2.setObjectName("comboBox_select_currency_2")
         self.horizontalLayout_3.addWidget(self.comboBox_select_currency_2)
@@ -249,7 +269,10 @@ class Ui_MainWindow(object):
         self.label_select_granularity_2.setObjectName("label_select_granularity_2")
         self.horizontalLayout_3.addWidget(self.label_select_granularity_2)
         self.comboBox_select_granularity_2 = QtWidgets.QComboBox(parent=self.layoutWidget_3)
-        self.comboBox_select_granularity_2.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBox_select_granularity_2.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
+"\n"
+"\n"
+"background-color: rgb(248, 230, 255)")
         self.comboBox_select_granularity_2.setObjectName("comboBox_select_granularity_2")
         self.horizontalLayout_3.addWidget(self.comboBox_select_granularity_2)
         self.verticalLayout_5.addLayout(self.horizontalLayout_3)
@@ -271,6 +294,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.label_num_rows_3)
         self.StartdateTimeEdit_2 = QtWidgets.QDateTimeEdit(parent=self.layoutWidget_3)
         self.StartdateTimeEdit_2.setMaximumSize(QtCore.QSize(201, 16777215))
+        self.StartdateTimeEdit_2.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.StartdateTimeEdit_2.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 1, 1), QtCore.QTime(0, 0, 0)))
         self.StartdateTimeEdit_2.setCalendarPopup(True)
         self.StartdateTimeEdit_2.setObjectName("StartdateTimeEdit_2")
@@ -282,15 +306,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.label_num_rows_4)
         self.EnddateTimeEdit_2 = QtWidgets.QDateTimeEdit(parent=self.layoutWidget_3)
         self.EnddateTimeEdit_2.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.EnddateTimeEdit_2.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.EnddateTimeEdit_2.setDateTime(QtCore.QDateTime(QtCore.QDate(2025, 3, 17), QtCore.QTime(23, 59, 59)))
         self.EnddateTimeEdit_2.setCalendarPopup(True)
         self.EnddateTimeEdit_2.setObjectName("EnddateTimeEdit_2")
         self.horizontalLayout_4.addWidget(self.EnddateTimeEdit_2)
         self.verticalLayout_5.addLayout(self.horizontalLayout_4)
-        self.label_3.raise_()
-        self.verticalLayoutWidget_4.raise_()
-        self.verticalLayoutWidget_2.raise_()
-        self.layoutWidget_3.raise_()
         self.tabWidget.addTab(self.Backtest, "")
         self.Prediction = QtWidgets.QWidget()
         self.Prediction.setObjectName("Prediction")
@@ -302,11 +323,20 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.label_options_5 = QtWidgets.QLabel(parent=self.layoutWidget_2)
         self.label_options_5.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(22)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_options_5.setFont(font)
         self.label_options_5.setStyleSheet("font: 22pt \"MS Shell Dlg 2\";\n"
 "QLabel {\n"
-"    background-color: transparent;\n"
+"    background-color(244, 221, 255);\n"
 "    color: white; /* Hoặc màu chữ tùy chỉnh */\n"
-"}")
+"}\n"
+"\n"
+"")
         self.label_options_5.setObjectName("label_options_5")
         self.verticalLayout_13.addWidget(self.label_options_5)
         self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
@@ -314,12 +344,22 @@ class Ui_MainWindow(object):
         self.label_select_currency_6 = QtWidgets.QLabel(parent=self.layoutWidget_2)
         self.label_select_currency_6.setMinimumSize(QtCore.QSize(15, 15))
         self.label_select_currency_6.setMaximumSize(QtCore.QSize(300, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_select_currency_6.setFont(font)
         self.label_select_currency_6.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
         self.label_select_currency_6.setObjectName("label_select_currency_6")
         self.horizontalLayout_14.addWidget(self.label_select_currency_6)
         self.comboBox_select_currency_5 = QtWidgets.QComboBox(parent=self.layoutWidget_2)
         self.comboBox_select_currency_5.setMinimumSize(QtCore.QSize(15, 15))
-        self.comboBox_select_currency_5.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";")
+        self.comboBox_select_currency_5.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
+"\n"
+"background-color: rgb(248, 230, 255)\n"
+"")
         self.comboBox_select_currency_5.setCurrentText("")
         self.comboBox_select_currency_5.setObjectName("comboBox_select_currency_5")
         self.horizontalLayout_14.addWidget(self.comboBox_select_currency_5)
@@ -342,6 +382,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addWidget(self.label_num_rows_9)
         self.StartdateTimeEdit_5 = QtWidgets.QDateTimeEdit(parent=self.layoutWidget_2)
         self.StartdateTimeEdit_5.setMaximumSize(QtCore.QSize(201, 16777215))
+        self.StartdateTimeEdit_5.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.StartdateTimeEdit_5.setDateTime(QtCore.QDateTime(QtCore.QDate(2024, 1, 1), QtCore.QTime(0, 0, 0)))
         self.StartdateTimeEdit_5.setCalendarPopup(True)
         self.StartdateTimeEdit_5.setObjectName("StartdateTimeEdit_5")
@@ -353,6 +394,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addWidget(self.label_num_rows_10)
         self.EnddateTimeEdit_5 = QtWidgets.QDateTimeEdit(parent=self.layoutWidget_2)
         self.EnddateTimeEdit_5.setMaximumSize(QtCore.QSize(200, 16777215))
+        self.EnddateTimeEdit_5.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.EnddateTimeEdit_5.setDateTime(QtCore.QDateTime(QtCore.QDate(2025, 3, 17), QtCore.QTime(23, 59, 59)))
         self.EnddateTimeEdit_5.setCalendarPopup(True)
         self.EnddateTimeEdit_5.setObjectName("EnddateTimeEdit_5")
@@ -361,41 +403,36 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_16.setObjectName("horizontalLayout_16")
         self.pushButton_Predict = QtWidgets.QPushButton(parent=self.layoutWidget_2)
+        self.pushButton_Predict.setStyleSheet("\n"
+"background-color: rgb(219, 211, 255)")
         self.pushButton_Predict.setObjectName("pushButton_Predict")
         self.horizontalLayout_16.addWidget(self.pushButton_Predict)
         self.pushButton_SavePrediction = QtWidgets.QPushButton(parent=self.layoutWidget_2)
+        self.pushButton_SavePrediction.setStyleSheet("\n"
+"background-color: rgb(219, 211, 255)")
         self.pushButton_SavePrediction.setObjectName("pushButton_SavePrediction")
         self.horizontalLayout_16.addWidget(self.pushButton_SavePrediction)
         self.verticalLayout_13.addLayout(self.horizontalLayout_16)
-        self.label_4 = QtWidgets.QLabel(parent=self.Prediction)
-        self.label_4.setGeometry(QtCore.QRect(-200, -10, 1279, 831))
-        self.label_4.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
-        self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("E:\\Project\\ML-final\\UI\\../Images/Background.png"))
-        self.label_4.setObjectName("label_4")
         self.verticalLayoutWidget_9 = QtWidgets.QWidget(parent=self.Prediction)
         self.verticalLayoutWidget_9.setGeometry(QtCore.QRect(10, 260, 831, 481))
         self.verticalLayoutWidget_9.setObjectName("verticalLayoutWidget_9")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_9)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.label_4.raise_()
-        self.layoutWidget_2.raise_()
-        self.verticalLayoutWidget_9.raise_()
         self.tabWidget.addTab(self.Prediction, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 868, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 868, 20))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.actionExit = QtGui.QAction(parent=MainWindow)
         self.actionExit.setObjectName("actionExit")
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
