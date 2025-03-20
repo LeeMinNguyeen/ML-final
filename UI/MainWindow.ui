@@ -575,6 +575,12 @@ QLabel {
     color: white; /* Hoặc màu chữ tùy chỉnh */
 }</string>
          </property>
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
          <property name="text">
           <string>Trend Following Strategy</string>
          </property>
@@ -671,6 +677,12 @@ QLabel {
     color: white;
     background-color: transparent; /* Hoặc đặt màu nền khác nếu cần */
 }</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
          </property>
          <property name="text">
           <string>Period</string>

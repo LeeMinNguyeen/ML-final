@@ -258,6 +258,8 @@ class Ui_MainWindow(object):
 "    background-color: transparent;\n"
 "    color: white; /* Hoặc màu chữ tùy chỉnh */\n"
 "}")
+        self.label_options_2.setFrameShape(QtWidgets.QFrame.Shape.Panel)
+        self.label_options_2.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.label_options_2.setObjectName("label_options_2")
         self.verticalLayout_5.addWidget(self.label_options_2)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
@@ -298,6 +300,8 @@ class Ui_MainWindow(object):
 "    color: white;\n"
 "    background-color: transparent; /* Hoặc đặt màu nền khác nếu cần */\n"
 "}")
+        self.label_price_chart_2.setFrameShape(QtWidgets.QFrame.Shape.Panel)
+        self.label_price_chart_2.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.label_price_chart_2.setObjectName("label_price_chart_2")
         self.verticalLayout_5.addWidget(self.label_price_chart_2)
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
