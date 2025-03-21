@@ -86,7 +86,7 @@ class Ui_LoginWindow(object):
         self.label.setGeometry(QtCore.QRect(820, 120, 441, 221))
         font = QtGui.QFont()
         font.setFamily("Adobe Caslon Pro")
-        font.setPointSize(36)
+        font.setPointSize(30)
         self.label.setFont(font)
         self.label.setObjectName("label")
 
@@ -101,6 +101,6 @@ class Ui_LoginWindow(object):
         self.pushButtonLogin.setText(_translate("LoginWindow", "Login"))
         self.label_8.setText(_translate("LoginWindow", "or "))
         self.pushButtonSignIn.setText(_translate("LoginWindow", "Sign up"))
-        self.label.setText(_translate("LoginWindow", "Forex trading &\n"
-"back testing system\n"
+        self.label.setText(_translate("LoginWindow", "Forex Trading &\n"
+"Backtesting system\n"
 ""))

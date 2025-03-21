@@ -63,7 +63,37 @@
         <height>481</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout"/>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QFrame" name="frame_2">
+          <property name="geometry">
+           <rect>
+            <x>-1</x>
+            <y>-1</y>
+            <width>831</width>
+            <height>481</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255)</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="verticalLayoutWidget_3">
       <property name="geometry">
@@ -87,19 +117,21 @@
            </property>
            <property name="font">
             <font>
-             <family>MS Shell Dlg 2</family>
+             <family>Montserrat Medium</family>
              <pointsize>22</pointsize>
-             <weight>50</weight>
+             <weight>75</weight>
              <italic>false</italic>
-             <bold>false</bold>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
-QLabel {
-   background-color: rgb(248, 230, 255)
-
-}</string>
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
            </property>
            <property name="text">
             <string>Options</string>
@@ -122,11 +154,20 @@ QLabel {
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat SemiBold</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true"/>
              </property>
              <property name="text">
-              <string>Select Currency</string>
+              <string>  Select Currency</string>
              </property>
             </widget>
            </item>
@@ -138,9 +179,13 @@ QLabel {
                <height>15</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat SemiBold</family>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-background-color: rgb(248, 230, 255)</string>
+              <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
              <property name="currentText">
               <string/>
@@ -161,8 +206,17 @@ background-color: rgb(248, 230, 255)</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat SemiBold</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true"/>
              </property>
              <property name="text">
               <string>Select Granularity</string>
@@ -172,8 +226,7 @@ background-color: rgb(248, 230, 255)</string>
            <item>
             <widget class="QComboBox" name="comboBox_select_granularity">
              <property name="styleSheet">
-              <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-background-color: rgb(248, 230, 255)</string>
+              <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
             </widget>
            </item>
@@ -185,8 +238,17 @@ background-color: rgb(248, 230, 255)</string>
                <height>15</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat ExtraBold</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;
+              <string notr="true">
 
 
 background-color: rgb(219, 211, 255)</string>
@@ -206,12 +268,22 @@ background-color: rgb(219, 211, 255)</string>
              <height>50</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+             <pointsize>22</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
-QLabel {
-    color: white;
-    background-color: transparent; /* Hoặc đặt màu nền khác nếu cần */
-}</string>
+            <string notr="true">background-color: rgb(248, 230, 255)</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
            </property>
            <property name="text">
             <string>Period</string>
@@ -228,11 +300,19 @@ QLabel {
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat Medium</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true"/>
              </property>
              <property name="text">
-              <string>Start Date</string>
+              <string>  Start Date</string>
              </property>
             </widget>
            </item>
@@ -244,8 +324,15 @@ QLabel {
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat Medium</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(248, 230, 255)</string>
+              <string notr="true"/>
              </property>
              <property name="dateTime">
               <datetime>
@@ -273,8 +360,16 @@ QLabel {
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat Medium</family>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+              <string notr="true"/>
              </property>
              <property name="text">
               <string>End Date</string>
@@ -289,9 +384,15 @@ QLabel {
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Montserrat Medium</family>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(248, 230, 255)
-</string>
+              <string notr="true">background-color: rgb(255, 255, 255)</string>
              </property>
              <property name="dateTime">
               <datetime>
@@ -321,10 +422,10 @@ QLabel {
     <widget class="QWidget" name="Backtest">
      <attribute name="icon">
       <iconset>
-       <normaloff>../Images/testing.png</normaloff>../Images/testing.png</iconset>
+       <normaloff>../Images/backtest.png</normaloff>../Images/backtest.png</iconset>
      </attribute>
      <attribute name="title">
-      <string>Backtest</string>
+      <string>Backtesting</string>
      </attribute>
      <widget class="QWidget" name="verticalLayoutWidget_4">
       <property name="geometry">
@@ -335,7 +436,21 @@ QLabel {
         <height>471</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_Output"/>
+      <layout class="QVBoxLayout" name="verticalLayout_Output">
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255)</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="verticalLayoutWidget_2">
       <property name="geometry">
@@ -363,8 +478,13 @@ QLabel {
              <height>40</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Starting Money</string>
@@ -373,8 +493,13 @@ QLabel {
          </item>
          <item>
           <widget class="QLineEdit" name="StartMoney">
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
           </widget>
          </item>
@@ -396,8 +521,13 @@ QLabel {
              <height>40</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Maximum Position</string>
@@ -406,8 +536,13 @@ QLabel {
          </item>
          <item>
           <widget class="QLineEdit" name="MaxPosition">
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
           </widget>
          </item>
@@ -429,8 +564,13 @@ QLabel {
              <height>40</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Slippage</string>
@@ -439,8 +579,14 @@ QLabel {
          </item>
          <item>
           <widget class="QLineEdit" name="Slippage">
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)
+</string>
            </property>
           </widget>
          </item>
@@ -462,8 +608,13 @@ QLabel {
              <height>40</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>MA Length</string>
@@ -472,8 +623,13 @@ QLabel {
          </item>
          <item>
           <widget class="QLineEdit" name="MA_Length">
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
           </widget>
          </item>
@@ -561,19 +717,15 @@ background-color: rgb(197, 215, 255)</string>
          </property>
          <property name="font">
           <font>
-           <family>MS Shell Dlg 2</family>
+           <family>Montserrat SemiBold</family>
            <pointsize>22</pointsize>
-           <weight>50</weight>
+           <weight>75</weight>
            <italic>false</italic>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
-QLabel {
-    background-color: transparent;
-    color: white; /* Hoặc màu chữ tùy chỉnh */
-}</string>
+          <string notr="true">background-color: rgb(248, 230, 255)</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Panel</enum>
@@ -602,8 +754,14 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Select Currency</string>
@@ -619,10 +777,8 @@ QLabel {
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-
-
-background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)
+</string>
            </property>
            <property name="currentText">
             <string/>
@@ -643,8 +799,14 @@ background-color: rgb(248, 230, 255)</string>
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Select Granularity</string>
@@ -653,11 +815,13 @@ background-color: rgb(248, 230, 255)</string>
          </item>
          <item>
           <widget class="QComboBox" name="comboBox_select_granularity_2">
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-
-
-background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
           </widget>
          </item>
@@ -671,12 +835,16 @@ background-color: rgb(248, 230, 255)</string>
            <height>50</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>Montserrat Medium</family>
+           <pointsize>22</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
-QLabel {
-    color: white;
-    background-color: transparent; /* Hoặc đặt màu nền khác nếu cần */
-}</string>
+          <string notr="true">background-color: rgb(248, 230, 255)</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Panel</enum>
@@ -699,8 +867,14 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Start Date</string>
@@ -715,8 +889,13 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
            <property name="dateTime">
             <datetime>
@@ -744,8 +923,14 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>End Date</string>
@@ -760,8 +945,13 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat Medium</family>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
            <property name="dateTime">
             <datetime>
@@ -814,21 +1004,15 @@ QLabel {
          </property>
          <property name="font">
           <font>
-           <family>MS Shell Dlg 2</family>
+           <family>Montserrat SemiBold</family>
            <pointsize>22</pointsize>
-           <weight>50</weight>
+           <weight>75</weight>
            <italic>false</italic>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
-QLabel {
-    background-color(244, 221, 255);
-    color: white; /* Hoặc màu chữ tùy chỉnh */
-}
-
-</string>
+          <string notr="true">background-color: rgb(248, 230, 255)</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Panel</enum>
@@ -859,15 +1043,15 @@ QLabel {
            </property>
            <property name="font">
             <font>
-             <family>MS Shell Dlg 2</family>
-             <pointsize>14</pointsize>
-             <weight>50</weight>
+             <family>Montserrat SemiBold</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
              <italic>false</italic>
-             <bold>false</bold>
+             <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Select Currency</string>
@@ -882,11 +1066,15 @@ QLabel {
              <height>15</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;
-
-background-color: rgb(248, 230, 255)
-</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
            <property name="currentText">
             <string/>
@@ -903,12 +1091,16 @@ background-color: rgb(248, 230, 255)
            <height>50</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>Montserrat SemiBold</family>
+           <pointsize>22</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">font: 22pt &quot;MS Shell Dlg 2&quot;;
-QLabel {
-    color: white;
-    background-color: transparent; /* Hoặc đặt màu nền khác nếu cần */
-}</string>
+          <string notr="true">background-color: rgb(248, 230, 255)</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::Panel</enum>
@@ -931,8 +1123,16 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <pointsize>8</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Start Date</string>
@@ -947,8 +1147,15 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
            <property name="dateTime">
             <datetime>
@@ -976,8 +1183,15 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>End Date</string>
@@ -992,8 +1206,15 @@ QLabel {
              <height>16777215</height>
             </size>
            </property>
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(248, 230, 255)</string>
+            <string notr="true">background-color: rgb(255, 255, 255)</string>
            </property>
            <property name="dateTime">
             <datetime>
@@ -1019,6 +1240,13 @@ QLabel {
         <layout class="QHBoxLayout" name="horizontalLayout_16">
          <item>
           <widget class="QPushButton" name="pushButton_Predict">
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">
 background-color: rgb(219, 211, 255)</string>
@@ -1030,6 +1258,13 @@ background-color: rgb(219, 211, 255)</string>
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_SavePrediction">
+           <property name="font">
+            <font>
+             <family>Montserrat SemiBold</family>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">
 background-color: rgb(219, 211, 255)</string>
@@ -1052,7 +1287,21 @@ background-color: rgb(219, 211, 255)</string>
         <height>481</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4"/>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QFrame" name="frame_4">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255)</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>

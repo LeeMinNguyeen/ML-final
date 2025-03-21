@@ -63,7 +63,7 @@
    <property name="geometry">
     <rect>
      <x>830</x>
-     <y>80</y>
+     <y>90</y>
      <width>441</width>
      <height>261</height>
     </rect>
@@ -71,12 +71,12 @@
    <property name="font">
     <font>
      <family>Adobe Caslon Pro</family>
-     <pointsize>36</pointsize>
+     <pointsize>30</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Forex trading &amp;
-back testing system
+    <string>Forex Trading &amp;
+Backtesting system
 </string>
    </property>
   </widget>
@@ -181,8 +181,11 @@ back testing system
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButtonCreateNewAccount">

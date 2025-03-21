@@ -1,7 +1,7 @@
 from predict import LSTM_model
 import sys, os
 
-sys.path.append(os.path.abspath('./UI'))
+sys.path.append(os.path.abspath('../UI'))
 
 from PyQt6 import QtWidgets
 from LoginWindow import Ui_LoginWindow

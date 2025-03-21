@@ -31,10 +31,10 @@ class Ui_SignUpWindow(object):
         self.pushButtonLoginSignIn.setStyleSheet("background-color: rgb(248, 230, 255)")
         self.pushButtonLoginSignIn.setObjectName("pushButtonLoginSignIn")
         self.label_3 = QtWidgets.QLabel(parent=SignUpWindow)
-        self.label_3.setGeometry(QtCore.QRect(830, 80, 441, 261))
+        self.label_3.setGeometry(QtCore.QRect(830, 90, 441, 261))
         font = QtGui.QFont()
         font.setFamily("Adobe Caslon Pro")
-        font.setPointSize(36)
+        font.setPointSize(30)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.lineEditEmailAddress = QtWidgets.QLineEdit(parent=SignUpWindow)
@@ -76,8 +76,9 @@ class Ui_SignUpWindow(object):
         self.lineEditPassWordSignUp = QtWidgets.QLineEdit(parent=SignUpWindow)
         self.lineEditPassWordSignUp.setGeometry(QtCore.QRect(750, 510, 371, 51))
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(12)
         self.lineEditPassWordSignUp.setFont(font)
+        self.lineEditPassWordSignUp.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEditPassWordSignUp.setObjectName("lineEditPassWordSignUp")
         self.pushButtonCreateNewAccount = QtWidgets.QPushButton(parent=SignUpWindow)
         self.pushButtonCreateNewAccount.setGeometry(QtCore.QRect(750, 580, 371, 51))
@@ -106,8 +107,8 @@ class Ui_SignUpWindow(object):
         _translate = QtCore.QCoreApplication.translate
         SignUpWindow.setWindowTitle(_translate("SignUpWindow", "Form"))
         self.pushButtonLoginSignIn.setText(_translate("SignUpWindow", "Login"))
-        self.label_3.setText(_translate("SignUpWindow", "Forex trading &\n"
-"back testing system\n"
+        self.label_3.setText(_translate("SignUpWindow", "Forex Trading &\n"
+"Backtesting system\n"
 ""))
         self.label_6.setText(_translate("SignUpWindow", "Password"))
         self.label_2.setText(_translate("SignUpWindow", "User Name"))
