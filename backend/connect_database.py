@@ -16,7 +16,7 @@ class connector():
             print("Pinged your deployment. You successfully connected to MongoDB!")
         except Exception as e:
             print(e)
-            
+                
     def login(self, username, password):
         collection = self.db["Users"]
         try:

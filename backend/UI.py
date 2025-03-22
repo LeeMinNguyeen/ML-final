@@ -1,7 +1,7 @@
-from predict import LSTM_model
+from LSTMpredict import LSTM_model
 import sys, os
 
-sys.path.append(os.path.abspath('../UI'))
+sys.path.append(os.path.abspath('./UI'))
 
 from PyQt6 import QtWidgets
 from LoginWindow import Ui_LoginWindow
@@ -11,7 +11,7 @@ from MainWindow import Ui_MainWindow
 from DataObject import ForexData
 
 from datetime import datetime
-from Backtesting import TrendFollow
+from TrendFollowing import TrendFollow
 
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -24,9 +24,6 @@ class MongoDatabase(connector):
         
     def disconnect(self):
         self.connector.client.close()
-        
-class Backtest():
-    pass
 
 class MainScreen(Ui_MainWindow):
     def setupUi(self, MainWindow):
@@ -212,7 +209,7 @@ class MainScreen(Ui_MainWindow):
         self.StartDate = datetime.strptime(self.StartdateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
         self.EndDate = datetime.strptime(self.EnddateTimeEdit_5.dateTime().toString("yyyy/MM/dd hh:mm:ss"), '%Y/%m/%d %H:%M:%S')
         
-        self.LoadData(currency_pair = self.currency_pair, grainularity = "H4")
+        self.LoadData(currency_pair = self.currency_pair, grainularity = "D1")
         
         self.predict = LSTM_model(data = self.data.df, start = self.StartDate, end = self.EndDate)
         self.predict.GetModel("LSTM")
@@ -326,7 +323,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     
     MainWindow = QtWidgets.QMainWindow()
-    ui = LoginUI()
+    ui = MainScreen()
     ui.setupUi(MainWindow)
     ui.showWindow()
     

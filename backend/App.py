@@ -14,4 +14,4 @@ display = LoginUI()
 display.setupUi(MainWindow)
 display.showWindow()
 
-sys.exit(app.exec())
+sys.exit(app.exec())    

@@ -20,7 +20,7 @@ class Ui_LoginWindow(object):
         self.Background = QtWidgets.QLabel(parent=LoginWindow)
         self.Background.setGeometry(QtCore.QRect(0, 0, 1279, 852))
         self.Background.setText("")
-        self.Background.setPixmap(QtGui.QPixmap("D:\\Uni\\Nam3\\Ki2\\MLBA\\Final\\ML-final\\UI\\../Images/LoginBg.png"))
+        self.Background.setPixmap(QtGui.QPixmap("./Images/LoginBg.png"))
         self.Background.setObjectName("Background")
         self.label_6 = QtWidgets.QLabel(parent=LoginWindow)
         self.label_6.setGeometry(QtCore.QRect(720, 340, 371, 16))
